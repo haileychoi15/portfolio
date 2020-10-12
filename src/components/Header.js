@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100%;
   height: 100px;
+  margin-bottom: 50px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 100px;
+  }
 `;
 
 const Ul = styled.ul`
@@ -23,12 +27,20 @@ const Li = styled.li`
 
 function Header () {
     return (
-        <Container>
+        <Container id="header">
             <Ul>
-                <Li>Me</Li>
-                <Li>Skills</Li>
-                <Li>Portpolio</Li>
-                <Li>Contact</Li>
+                <Li>
+                    <a href="#header">Me</a>
+                </Li>
+                <Li>
+                    <a href="#skills">Skills</a>
+                </Li>
+                <Li>
+                    <a href="#portpolio">Portpolio</a>
+                </Li>
+                <Li>
+                    <a href="#contact">Contact</a>
+                </Li>
             </Ul>
         </Container>
     );

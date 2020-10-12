@@ -3,16 +3,18 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   width: 100%;
-  height: 1000px;
+  padding: 0 5%;
+  @media screen and (min-width: 768px) {
+    height: 598px;
+    padding: 0 10%;
+  }
 `;
 
 const MeBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 10%;
   width: 100%;
-  height: 300px;
 `;
 
 const Name = styled.div`
@@ -40,7 +42,35 @@ const Description = styled.p`
   }
 `;
 
-function Main () {
+const ButtonBlock = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  @media screen and (min-width: 768px) {
+    height: 300px;
+  }
+`;
+
+const DownloadButton = styled.button`
+  border-radius: 6px;
+  padding: 20px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #ee5544;
+  transition: all 250ms ease-in-out;
+  box-shadow: 4px 4px 15px 0px rgba(111,0,0,0.2);
+  &:hover {
+    box-shadow: 4px 4px 15px 0px rgba(111,0,0,0.5);
+    transform: translateY(-2px);
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+  }
+`;
+
+
+function Me () {
     return (
         <Container>
             <MeBlock>
@@ -48,8 +78,13 @@ function Main () {
                 <Job>front-end web developer</Job>
                 <Description>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
             </MeBlock>
+            <ButtonBlock>
+                <DownloadButton>
+                    <span className="state">Open to Work</span>
+                </DownloadButton>
+            </ButtonBlock>
         </Container>
     );
 }
 
-export default Main;
+export default Me;
