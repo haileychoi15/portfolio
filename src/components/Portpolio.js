@@ -12,31 +12,15 @@ const Container = styled.div`
   }
 `;
 
-const Projects = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 50px;
-  @media screen and (min-width: 768px) {
-     justify-content: space-between;
-     padding: 0 5% 50px;
-  }
-  @media screen and (min-width: 1200px) {
-     padding: 0 4% 50px;
-  }
-`;
-
 function Portpolio () {
     return (
         <Container id="portpolio">
             <Category name="Portpolio" />
-            <Projects>
-                <Project title="project1" />
-                <Project title="project2" />
-                <Project title="project3" />
-                <Project title="project4" />
-            </Projects>
+            <div>
+                <Project />
+                <Project />
+                <Project />
+            </div>
         </Container>
     );
 }

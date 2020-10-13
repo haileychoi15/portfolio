@@ -19,10 +19,10 @@ const MeBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 80%;
-  margin-bottom: 50px;
+  margin: 100px 0;
   @media screen and (min-width: 768px) {
-    width: 40%;
-    margin-bottom: 0;
+    width: 50%;
+    margin: 0;
   }
 `;
 

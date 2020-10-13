@@ -9,8 +9,11 @@ const Container = styled.div`
 `;
 
 const Ul = styled.ul`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 900;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const Li = styled.li`
@@ -23,7 +26,12 @@ const Link = styled.a`
     display: inline-block;
     transition: all 250ms ease-in-out;
   &:hover {
-    transform: translateX(-10px);
+    transform: translateX(-5px);
+  }
+  @media screen and (min-width: 768px) {
+    &:hover {
+      transform: translateX(-10px);
+    }
   }
 `;
 

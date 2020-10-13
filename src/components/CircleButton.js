@@ -12,14 +12,19 @@ const ButtonBlock = styled.button`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   padding: 0;
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
   transition: all 250ms ease-in-out;
   &:hover {
     box-shadow: 0 5px 8px -2px rgba(50, 50, 93, 0.5);
+  }
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
   ${backgroundColor}
 `;
