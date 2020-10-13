@@ -9,6 +9,7 @@ const ProjectBlock = styled.div`
   margin-bottom: 50px;
   background-color: #fff;
   transition: all 250ms ease-in-out;
+  overflow: hidden;
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.3);
@@ -24,7 +25,7 @@ const ProjectBlock = styled.div`
 const ProjectImage = styled.div`
   width: 100%;
   height: 65%;
-  background-color: #e7f5ff;
+  background-color: rgb(252, 106, 101);
 `;
 
 const ProjectDescription = styled.div`

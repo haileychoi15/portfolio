@@ -38,7 +38,6 @@ const Job = styled.div`
   font-size: 28px;
   font-weight: 500;
   color: rgb(252, 106, 101);
-  opacity: 0.8;
   @media screen and (min-width: 768px) {
     font-size: 30px;
   }

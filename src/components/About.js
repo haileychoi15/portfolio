@@ -1,9 +1,10 @@
 import React from 'react';
-import { IoIosCheckmarkCircleOutline, IoIosCheckmarkCircle } from "react-icons/io";
 import styled from 'styled-components';
 import Category from './Category';
+import Item from './Item';
 
 const Container = styled.div`
+  background-color: #fafafa;
   @media screen and (min-width: 768px) {
     height: 800px;
   }
@@ -23,87 +24,39 @@ const AboutBlock = styled.div`
   }
 `;
 
-const ItemBlock = styled.div`
-  border-radius: 6px;
-  color: #333;
-  width: 100%;
-  background-color: cornflowerblue;
-  & + & {
-    margin-top: 30px;
-    margin-left: 0;
-  }
-  @media screen and (min-width: 768px) {
-    min-width: 300px;
-    width: 30%;
-    & + & {
-    margin-top: 0;
-    margin-left: 100px;
-    }
-  }
-`;
-
-const ItemTitle = styled.strong`
-  display: block;
-  margin: 20px;
-  font-size: 26px;
-  font-weight: 500;
-  color: rgb(252, 106, 101);
-`;
-
-const Ul = styled.ul`
-  margin: 20px ;
-`;
-
-const Li = styled.li`
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weiht: 500;
-  & + & {
-    margin-top: 10px;
-  }
-  & .check-icon {
-    margin-right: 10px;
-    font-size: 20px;
-    color: #fff;
-  }
-`;
-
-const Text = styled.span`
-  min-width: 100px;
-`;
-
 function About() {
 
-    const SkillsObject = {
-        frontend: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'ReactJS'],
-        backend: ['Java', 'Oracle', 'Firebase']
+    const data = {
+        0: {
+            subject: 'SKILLSET',
+            first: {
+                title: 'Front-end',
+                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+            },
+            second: {
+                title: 'Back-end',
+                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+            }
+        },
+        1: {
+            subject: 'EDUCATION',
+            first: {
+                title: '2015 - 2020',
+                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+            },
+            second: {
+                title: '2020',
+                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+            }
+        }
     }
 
     return (
         <Container id="about">
             <Category name="About" color="white"></Category>
             <AboutBlock>
-                <ItemBlock>
-                    <ItemTitle>Front-end</ItemTitle>
-                    <Ul>
-                        {SkillsObject.frontend.map(skill =>
-                            <Li>
-                                <Text>{skill}</Text>
-                            </Li>
-                        )}
-                    </Ul>
-                </ItemBlock>
-                <ItemBlock>
-                    <ItemTitle>Back-end</ItemTitle>
-                    <Ul>
-                        {SkillsObject.backend.map(skill =>
-                            <Li>
-                                <Text>{skill}</Text>
-                            </Li>
-                        )}
-                    </Ul>
-                </ItemBlock>
+                <Item data={data[0]} />
+                <Item data={data[1]} />
             </AboutBlock>
         </Container>
     );
