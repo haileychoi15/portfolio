@@ -32,10 +32,10 @@ function Header () {
         <Container id="header">
             <Ul>
                 <Li>
-                    <Link href="#header">Me</Link>
+                    <Link href="#home">Home</Link>
                 </Li>
                 <Li>
-                    <Link href="#skills">Skills</Link>
+                    <Link href="#about">About</Link>
                 </Li>
                 <Li>
                     <Link href="#portpolio">Portpolio</Link>

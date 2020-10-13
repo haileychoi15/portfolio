@@ -37,7 +37,7 @@ const Name = styled.div`
 const Job = styled.div`
   font-size: 28px;
   font-weight: 500;
-  color: rgb(144,203,203);
+  color: rgb(252, 106, 101);
   opacity: 0.8;
   @media screen and (min-width: 768px) {
     font-size: 30px;
@@ -82,9 +82,9 @@ const ButtonText = styled.span`
   margin-right: 20px;
 `;
 
-function Me () {
+function Home () {
     return (
-        <Container>
+        <Container id="home">
             <Header />
             <MeBlock>
                 <Name>Hailey Choi</Name>
@@ -107,4 +107,4 @@ function Me () {
     );
 }
 
-export default Me;
+export default Home;

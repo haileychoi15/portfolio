@@ -32,7 +32,7 @@ function CircleButton({ children, color }) {
 
 const style = {
     color: {
-        default: 'rgb(144,203,203)',
+        default: 'rgb(252, 106, 101)',
         black: '#333'
     }
 }

@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Fira Sans Condensed', sans-serif;    
     color: #333333;
-    background-color: #f8f9fa;
+    background-color: #fff;
     padding: 0;
     margin: 0;
   }
