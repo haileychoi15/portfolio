@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { AiOutlineRight, AiOutlinePlus } from 'react-icons/ai';
+import Header from './Header';
+import CircleButton from "./CircleButton";
 
 const Container = styled.div`
+  position: relative;
+  padding: 20px;
   width: 100%;
-  padding: 0 5%;
   @media screen and (min-width: 768px) {
-    height: 598px;
-    padding: 0 10%;
+    height: 800px;
+    padding: 50px;
   }
 `;
 
@@ -14,7 +18,12 @@ const MeBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: 80%;
+  margin-bottom: 50px;
+  @media screen and (min-width: 768px) {
+    width: 40%;
+    margin-bottom: 0;
+  }
 `;
 
 const Name = styled.div`
@@ -28,6 +37,7 @@ const Name = styled.div`
 const Job = styled.div`
   font-size: 28px;
   font-weight: 500;
+  color: rgb(144,203,203);
   opacity: 0.8;
   @media screen and (min-width: 768px) {
     font-size: 30px;
@@ -42,47 +52,57 @@ const Description = styled.p`
   }
 `;
 
-const ButtonBlock = styled.div`
+const MenuButton = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 200px;
   @media screen and (min-width: 768px) {
-    height: 300px;
+    top: 50px;
+    right: 50px;
   }
 `;
 
-const DownloadButton = styled.button`
-  border-radius: 6px;
-  padding: 20px;
+const ResumeButton = styled.div`
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    bottom: 50px;
+    right: 50px;
+  }
+`;
+
+const ButtonText = styled.span`
   font-size: 20px;
-  color: #fff;
-  background-color: #ee5544;
-  transition: all 250ms ease-in-out;
-  box-shadow: 4px 4px 15px 0px rgba(111,0,0,0.2);
-  &:hover {
-    box-shadow: 4px 4px 15px 0px rgba(111,0,0,0.5);
-    transform: translateY(-2px);
-  }
-  @media screen and (min-width: 768px) {
-    font-size: 26px;
-  }
+  font-weight: 500;
+  margin-right: 20px;
 `;
-
 
 function Me () {
     return (
         <Container>
+            <Header />
             <MeBlock>
                 <Name>Hailey Choi</Name>
                 <Job>front-end web developer</Job>
                 <Description>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
             </MeBlock>
-            <ButtonBlock>
-                <DownloadButton>
-                    <span className="state">Open to Work</span>
-                </DownloadButton>
-            </ButtonBlock>
+            <MenuButton>
+                <ButtonText>Contact</ButtonText>
+                <CircleButton color="black">
+                    <AiOutlinePlus className="button-icon" />
+                </CircleButton>
+            </MenuButton>
+            <ResumeButton>
+                <ButtonText>Resume</ButtonText>
+                <CircleButton>
+                    <AiOutlineRight />
+                </CircleButton>
+            </ResumeButton>
         </Container>
     );
 }

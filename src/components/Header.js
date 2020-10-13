@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100%;
-  height: 100px;
   margin-bottom: 50px;
   @media screen and (min-width: 768px) {
     margin-bottom: 100px;
@@ -11,17 +9,21 @@ const Container = styled.div`
 `;
 
 const Ul = styled.ul`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 900;
 `;
 
 const Li = styled.li`
-  padding: 40px 20px;
-  &:last-child {
-    margin-right: 30px;
+  & + & {
+    margin-top: 10px;
+  }
+`;
+
+const Link = styled.a`
+    display: inline-block;
+    transition: all 250ms ease-in-out;
+  &:hover {
+    transform: translateX(-10px);
   }
 `;
 
@@ -30,16 +32,16 @@ function Header () {
         <Container id="header">
             <Ul>
                 <Li>
-                    <a href="#header">Me</a>
+                    <Link href="#header">Me</Link>
                 </Li>
                 <Li>
-                    <a href="#skills">Skills</a>
+                    <Link href="#skills">Skills</Link>
                 </Li>
                 <Li>
-                    <a href="#portpolio">Portpolio</a>
+                    <Link href="#portpolio">Portpolio</Link>
                 </Li>
                 <Li>
-                    <a href="#contact">Contact</a>
+                    <Link href="#contact">Contact</Link>
                 </Li>
             </Ul>
         </Container>

@@ -12,8 +12,7 @@ function App() {
         <Fragment>
             <GlobalStyles />
             <div>
-                <Header />
-                <Aside />
+                {/*<Aside />*/}
                 <Me />
                 <Skills />
                 <Portpolio />

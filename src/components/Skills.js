@@ -19,7 +19,6 @@ const SkillsBlock = styled.div`
   width: 100%;
   padding: 0 10% 100px;
   @media screen and (min-width: 768px) {
-    flex-direction: row;
     padding: 0;
   }
 `;
@@ -34,11 +33,7 @@ const Skill = styled.div`
     margin-left: 0;
   }
   @media screen and (min-width: 768px) {
-    width: 30%;
-    & + & {
-    margin-top: 0;
-    margin-left: 50px;
-    }
+    width: 60%;
   }
 `;
 
@@ -82,27 +77,13 @@ function Skills() {
                         <Li><IoIosCheckmarkCircle className="check-icon" />jQuery</Li>
                         <Li><IoIosCheckmarkCircle className="check-icon" />ReactJS</Li>
                     </Ul>
+                </Skill>
+                <Skill>
                     <SkillTitle>Back-end</SkillTitle>
                     <Ul>
                         <Li><IoIosCheckmarkCircle className="check-icon" />Java</Li>
                         <Li><IoIosCheckmarkCircle className="check-icon" />Oracle</Li>
                         <Li><IoIosCheckmarkCircle className="check-icon" />Firebase</Li>
-                    </Ul>
-                </Skill>
-                <Skill>
-                    <SkillTitle>Interests</SkillTitle>
-                    <Ul>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />Uesr Interface</Li>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />Uesr Experience</Li>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />SEO</Li>
-                    </Ul>
-                    <SkillTitle>Tools</SkillTitle>
-                    <Ul>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />WebStrom</Li>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />intelliJ</Li>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />Eclipse</Li>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />DataGrip</Li>
-                        <Li><IoIosCheckmarkCircleOutline className="check-icon" />Git / Github</Li>
                     </Ul>
                 </Skill>
             </SkillsBlock>
