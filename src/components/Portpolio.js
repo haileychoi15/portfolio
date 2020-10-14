@@ -17,9 +17,24 @@ function Portpolio () {
         <Container id="portpolio">
             <Category name="Portpolio" />
             <div>
-                <Project />
-                <Project />
-                <Project />
+                <Project
+                    project="Paint Board"
+                    type="Experiments"
+                    languages="JavaScript"
+                    github="https://github.com/haileychoi15/PaintJS"
+                    image="/paint-js.png" />
+                <Project
+                    project="Movie App"
+                    type="Movie Recommendation Service"
+                    languages="ReactJS"
+                    github="https://github.com/haileychoi15/movie-app"
+                    image="/movie-app.png" />
+                <Project
+                    project="Ticket24"
+                    type="Performance Booking Service"
+                    languages="JavaScript"
+                    github="https://github.com/haileychoi15/ticket24"
+                    image="https://user-images.githubusercontent.com/60546778/91707600-01cf5c80-ebbb-11ea-89cc-7e381bb864df.png" />
             </div>
         </Container>
     );

@@ -15,6 +15,7 @@ const Container = styled.div`
 `;
 
 const MeBlock = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,6 +24,22 @@ const MeBlock = styled.div`
   @media screen and (min-width: 768px) {
     width: 50%;
     margin: 0;
+  }
+`;
+
+const Photo = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  //background-image: url("/IMG_7629.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  & img {
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -86,6 +103,8 @@ function Home () {
         <Container id="home">
             <Header />
             <MeBlock>
+                <Photo>
+                </Photo>
                 <Name>Hailey Choi</Name>
                 <Job>front-end web developer</Job>
                 <Description>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
