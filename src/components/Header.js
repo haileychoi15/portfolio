@@ -48,9 +48,6 @@ function Header () {
                 <Li>
                     <Link href="#portpolio">Portpolio</Link>
                 </Li>
-                <Li>
-                    <Link href="#contact">Contact</Link>
-                </Li>
             </Ul>
         </Container>
     );

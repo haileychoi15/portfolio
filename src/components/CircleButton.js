@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, { css } from 'styled-components';
+import Contact from "./Contact";
 
 const backgroundColor = css`
   ${props => css`
@@ -8,6 +9,7 @@ const backgroundColor = css`
 `;
 
 const ButtonBlock = styled.button`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +23,12 @@ const ButtonBlock = styled.button`
   &:hover {
     box-shadow: 0 5px 8px -2px rgba(50, 50, 93, 0.5);
   }
+  & .button-icon {
+    transition: all 150ms ease-in-out;
+    ${props => props.open && css`
+    transform: rotate(45deg);
+  `}
+  }
   @media screen and (min-width: 768px) {
     width: 50px;
     height: 50px;
@@ -30,8 +38,17 @@ const ButtonBlock = styled.button`
 `;
 
 function CircleButton({ children, color }) {
+    const [open, setOpen] = useState(false);
+    const handleClick = () => {
+        if(color === 'black') setOpen(!open);
+    }
     return (
-        <ButtonBlock color={color}>{children}</ButtonBlock>
+        <>
+            <Contact open={open} />
+            <ButtonBlock color={color} onClick={handleClick} open={open}>
+                {children}
+            </ButtonBlock>
+        </>
     );
 }
 

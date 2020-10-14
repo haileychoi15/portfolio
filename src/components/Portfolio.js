@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import Project from './Project';
 import Category from './Category';
+import Aside from "./Aside";
 
 const Container = styled.div`
   width: 100%;
@@ -12,24 +13,37 @@ const Container = styled.div`
   }
 `;
 
-function Portpolio () {
+function Portfolio () {
+    // onScroll event 사용하는 것으로 바꾸기
+    const [scroll, setScroll] = useState(false);
+    const handleScroll = () => {
+        window.scrollY > 1000 ? setScroll(true) : setScroll(false);
+        console.log(scroll);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return window.removeEventListener('scroll', handleScroll);
+    },[]);
+
     return (
         <Container id="portpolio">
+            {scroll && <Aside />}
             <Category name="Portpolio" />
             <div>
-                <Project
+                <Project id="first"
                     project="Paint Board"
                     type="Experiments"
                     languages="JavaScript"
                     github="https://github.com/haileychoi15/PaintJS"
                     image="/paint-js.png" />
-                <Project
+                <Project id="second"
                     project="Movie App"
                     type="Movie Recommendation Service"
                     languages="ReactJS"
                     github="https://github.com/haileychoi15/movie-app"
                     image="/movie-app.png" />
-                <Project
+                <Project id="third"
                     project="Ticket24"
                     type="Performance Booking Service"
                     languages="JavaScript"
@@ -40,4 +54,4 @@ function Portpolio () {
     );
 }
 
-export default Portpolio;
+export default Portfolio;

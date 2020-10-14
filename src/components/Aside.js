@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaGithub, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { FaGithub, FaInstagram } from 'react-icons/fa'
 
 const Container = styled.div`
   position: fixed;
@@ -33,14 +33,14 @@ function Aside() {
         <Container>
             <ul>
                 <li>
-                    <a href="https://github.com/haileychoi15" target="_blank">
+                    <a href="https://github.com/haileychoi15" target="_blank" rel="noopener noreferrer">
                         <IconBlock>
                             <FaGithub />
                         </IconBlock>
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/haileychoi15" target="_blank">
+                    <a href="https://github.com/haileychoi15" target="_blank" rel="noopener noreferrer">
                         <IconBlock>
                             <FaInstagram />
                         </IconBlock>

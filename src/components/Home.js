@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import { AiOutlineRight, AiOutlinePlus } from 'react-icons/ai';
+import { MdAdd, MdArrowForward } from 'react-icons/md';
 import Header from './Header';
 import CircleButton from "./CircleButton";
 
@@ -112,13 +112,13 @@ function Home () {
             <MenuButton>
                 <ButtonText>Contact</ButtonText>
                 <CircleButton color="black">
-                    <AiOutlinePlus className="button-icon" />
+                    <MdAdd className="button-icon" />
                 </CircleButton>
             </MenuButton>
             <ResumeButton>
                 <ButtonText>Resume</ButtonText>
                 <CircleButton>
-                    <AiOutlineRight />
+                    <MdArrowForward />
                 </CircleButton>
             </ResumeButton>
         </Container>

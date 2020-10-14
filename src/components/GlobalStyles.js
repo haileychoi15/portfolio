@@ -1,4 +1,3 @@
-import React from 'react';
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -22,6 +21,11 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+  
+  dl, dt, dd {
+    margin: 0;
+    padding: 0;
   }
   
   a {
