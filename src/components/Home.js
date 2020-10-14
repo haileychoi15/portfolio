@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { MdAdd, MdArrowForward } from 'react-icons/md';
 import Header from './Header';
-import CircleButton from "./CircleButton";
+import CircleButton from './CircleButton';
+import { useAnimation } from '../hooks/UseAnimation';
 
 const Container = styled.div`
   position: relative;
@@ -99,10 +100,14 @@ const ButtonText = styled.span`
 `;
 
 function Home () {
+
+    const animatedItem = useAnimation();
+    console.log(animatedItem);
+
     return (
         <Container id="home">
             <Header />
-            <MeBlock>
+            <MeBlock {...animatedItem} >
                 <Photo>
                 </Photo>
                 <Name>Hailey Choi</Name>

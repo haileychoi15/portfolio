@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import Project from './Project';
 import Category from './Category';
@@ -14,20 +14,13 @@ const Container = styled.div`
 `;
 
 function Portfolio () {
-    // onScroll event 사용하는 것으로 바꾸기
     const [scroll, setScroll] = useState(false);
-    const handleScroll = () => {
-        window.scrollY > 1000 ? setScroll(true) : setScroll(false);
-        console.log(scroll);
+    const handleScroll = e => {
+        console.log(e);
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        return window.removeEventListener('scroll', handleScroll);
-    },[]);
-
     return (
-        <Container id="portpolio">
+        <Container id="portpolio" onScroll={handleScroll}>
             {scroll && <Aside />}
             <Category name="Portpolio" />
             <div>
