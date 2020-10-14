@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { useAnimation } from '../hooks/UseAnimation';
 
 const ItemBlock = styled.div`
   border-radius: 6px;
@@ -41,12 +42,12 @@ const ItemDescription = styled.p`
   color: #333;
 `;
 
-function Item( { data } ) {
+function Item( { data, animationDirection } ) {
 
     const { subject, first, second } = data;
 
     return (
-        <ItemBlock>
+        <ItemBlock {...useAnimation(animationDirection)}>
             <ItemTitle>{subject}</ItemTitle>
             <ItemSubTitle>{first.title}</ItemSubTitle>
             <ItemDescription>{first.description}</ItemDescription>

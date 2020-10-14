@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useAnimation } from '../hooks/UseAnimation';
 
 const Container = styled.div`
   margin-bottom: 50px;
@@ -36,8 +37,9 @@ const Link = styled.a`
 `;
 
 function Header () {
+    const animations = useAnimation('down');
     return (
-        <Container id="header">
+        <Container id="header" {...animations}>
             <Ul>
                 <Li>
                     <Link href="#home">Home</Link>

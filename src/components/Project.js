@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa'
+import { useAnimation } from '../hooks/UseAnimation';
 
 const ProjectBlock = styled.div`
     position: relative; 
@@ -182,7 +183,7 @@ function Project ({ project, type, languages, github, image }) {
                 <img src={image} alt={project} />
             </ProjectImage>
             <ProjectInfo>
-                <Dl>
+                <Dl {...useAnimation()}>
                     <InfoGroup>
                         <Title>Project</Title>
                         <Description>{project}</Description>

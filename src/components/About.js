@@ -55,8 +55,8 @@ function About() {
         <Container id="about">
             <Category name="About" color="white"></Category>
             <AboutBlock>
-                <Item data={data[0]} />
-                <Item data={data[1]} />
+                <Item data={data[0]} animationDirection="right" />
+                <Item data={data[1]} animationDirection="left" />
             </AboutBlock>
         </Container>
     );

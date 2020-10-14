@@ -17,7 +17,7 @@ function Portfolio () {
     const [scroll, setScroll] = useState(false);
     const handleScroll = e => {
         console.log(e);
-    }
+    } // 스크롤 내려왔을 때 사이드 바 보이기 구현...
 
     return (
         <Container id="portpolio" onScroll={handleScroll}>

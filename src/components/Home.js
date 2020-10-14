@@ -100,27 +100,23 @@ const ButtonText = styled.span`
 `;
 
 function Home () {
-
-    const animatedItem = useAnimation();
-    console.log(animatedItem);
-
     return (
         <Container id="home">
             <Header />
-            <MeBlock {...animatedItem} >
+            <MeBlock >
                 <Photo>
                 </Photo>
-                <Name>Hailey Choi</Name>
-                <Job>front-end web developer</Job>
-                <Description>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
+                <Name {...useAnimation('right')}>Hailey Choi</Name>
+                <Job {...useAnimation('right', '1', '0.4')}>front-end web developer</Job>
+                <Description {...useAnimation('right', '1', '0.8')}>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
             </MeBlock>
-            <MenuButton>
+            <MenuButton {...useAnimation('left')}>
                 <ButtonText>Contact</ButtonText>
                 <CircleButton color="black">
                     <MdAdd className="button-icon" />
                 </CircleButton>
             </MenuButton>
-            <ResumeButton>
+            <ResumeButton {...useAnimation('left')}>
                 <ButtonText>Resume</ButtonText>
                 <CircleButton>
                     <MdArrowForward />
