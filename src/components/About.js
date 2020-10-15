@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Category from './Category';
 import Item from './Item';
+import { useMobile } from "../hooks/UseMobile";
 
 const Container = styled.div`
   background-color: #fafafa;
   @media screen and (min-width: 768px) {
-    height: 800px;
+    
   }
 `;
 
@@ -20,12 +21,14 @@ const AboutBlock = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     width: 100%;
-    padding: 0;
+    padding: 100px 0 80px;
+    margin-bottom: 120px;
   }
 `;
 
 function About() {
 
+    const mobile = useMobile();
     const data = {
         0: {
             subject: 'SKILLSET',
@@ -53,7 +56,7 @@ function About() {
 
     return (
         <Container id="about">
-            <Category name="About" color="white"></Category>
+            {mobile && <Category name="About" />}
             <AboutBlock>
                 <Item data={data[0]} animationDirection="right" />
                 <Item data={data[1]} animationDirection="left" />

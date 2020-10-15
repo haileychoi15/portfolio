@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdAdd, MdArrowForward } from 'react-icons/md';
-import Header from './Header';
 import CircleButton from './CircleButton';
 import { useAnimation } from '../hooks/UseAnimation';
 
@@ -21,6 +20,7 @@ const MeBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 80%;
+  padding-left: 50px;
   margin: 100px 0;
   @media screen and (min-width: 768px) {
     width: 50%;
@@ -54,8 +54,8 @@ const Name = styled.div`
 
 const Job = styled.div`
   font-size: 28px;
-  font-weight: 500;
-  color: rgb(252, 106, 101);
+  font-weight: 400;
+  color: #4fc08d; //rgb(252, 106, 101);
   @media screen and (min-width: 768px) {
     font-size: 30px;
   }
@@ -95,14 +95,14 @@ const ResumeButton = styled.div`
 
 const ButtonText = styled.span`
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   margin-right: 20px;
 `;
 
 function Home () {
     return (
         <Container id="home">
-            <Header />
+            {/*<Header />*/}
             <MeBlock >
                 <Photo>
                 </Photo>
@@ -112,13 +112,13 @@ function Home () {
             </MeBlock>
             <MenuButton {...useAnimation('left')}>
                 <ButtonText>Contact</ButtonText>
-                <CircleButton color="black">
+                <CircleButton>
                     <MdAdd className="button-icon" />
                 </CircleButton>
             </MenuButton>
             <ResumeButton {...useAnimation('left')}>
                 <ButtonText>Resume</ButtonText>
-                <CircleButton>
+                <CircleButton color="green" backgroundColor="white" border>
                     <MdArrowForward />
                 </CircleButton>
             </ResumeButton>

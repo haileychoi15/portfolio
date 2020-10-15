@@ -2,9 +2,13 @@ import React, {useState} from 'react';
 import styled, { css } from 'styled-components';
 import Contact from "./Contact";
 
-const backgroundColor = css`
-  ${props => css`
-    background-color: ${style.color[props.color]};
+const colorStyles = css`
+  ${({color, backgroundColor}) => css`
+    color: ${style.color[color]};
+    background-color: ${style.backgroundColor[backgroundColor]};
+    ${props => props.border && css`
+        border: 1px solid ${style.color[color]};
+    `}
   `}
 `;
 
@@ -21,7 +25,7 @@ const ButtonBlock = styled.button`
   color: #fff;
   transition: all 250ms ease-in-out;
   &:hover {
-    box-shadow: 0 5px 8px -2px rgba(50, 50, 93, 0.5);
+    transform: scale(1.05);
   }
   & .button-icon {
     transition: all 150ms ease-in-out;
@@ -34,18 +38,18 @@ const ButtonBlock = styled.button`
     height: 50px;
     font-size: 24px;
   }
-  ${backgroundColor}
+  ${colorStyles}
 `;
 
-function CircleButton({ children, color }) {
+function CircleButton({ children, color, backgroundColor, border }) {
     const [open, setOpen] = useState(false);
     const handleClick = () => {
-        if(color === 'black') setOpen(!open);
+        if(color === 'white') setOpen(!open);
     }
     return (
         <>
             <Contact open={open} />
-            <ButtonBlock color={color} onClick={handleClick} open={open}>
+            <ButtonBlock color={color} backgroundColor={backgroundColor} border={border} onClick={handleClick} open={open}>
                 {children}
             </ButtonBlock>
         </>
@@ -54,13 +58,19 @@ function CircleButton({ children, color }) {
 
 const style = {
     color: {
-        default: 'rgb(252, 106, 101)',
-        black: '#333'
+        white: '#fff',
+        green: '#4fc08d'
+    },
+    backgroundColor: {
+        black: '#333',
+        white: '#fff'
     }
 }
 
 CircleButton.defaultProps = {
-    color: 'default'
+    color: 'white',
+    backgroundColor: 'black',
+    border: false
 };
 
 export default CircleButton;

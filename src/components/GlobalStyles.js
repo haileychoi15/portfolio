@@ -15,6 +15,9 @@ const GlobalStyles = createGlobalStyle`
   
   body * {
     box-sizing: border-box;
+    &::selection {
+      background-color: rgba(79,192,141,0.5);
+    }
   }
   
   ul, ol, li {

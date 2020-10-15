@@ -1,51 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaGithub, FaInstagram } from 'react-icons/fa'
+import { AiOutlineHome } from 'react-icons/ai'
 
 const Container = styled.div`
   position: fixed;
   top: 50%;
-  right: 30px;
+  left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transform: translateY(-50%);
   border-radius: 6px;
-  background-color: #fff;
-  box-shadow: 0 5px 13px -3px rgba(50, 50, 93, 0.3);
+  background: none;
   z-index: 1000;
 `;
 
-const IconBlock = styled.div`
+const Li = styled.li`
+  & + & {
+    margin-top: 30px;
+  }
+`;
+
+const Link = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin: 10px 12px;
-  font-size: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  & .menu-icon {
+    font-size: 20px;
+  }
+  &:hover {
+    color: #4fc08d;
+  }
 `;
 
 function Aside() {
     return (
         <Container>
             <ul>
-                <li>
-                    <a href="https://github.com/haileychoi15" target="_blank" rel="noopener noreferrer">
-                        <IconBlock>
-                            <FaGithub />
-                        </IconBlock>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/haileychoi15" target="_blank" rel="noopener noreferrer">
-                        <IconBlock>
-                            <FaInstagram />
-                        </IconBlock>
-                    </a>
-                </li>
+                <Li>
+                    <Link href="#home">
+                        <AiOutlineHome className="menu-icon" />
+                    </Link>
+                </Li>
+                <Li>
+                    <Link href="#first">01</Link>
+                </Li>
+                <Li>
+                    <Link href="#second">02</Link>
+                </Li>
+                <Li>
+                    <Link href="#third">03</Link>
+                </Li>
             </ul>
         </Container>
     );

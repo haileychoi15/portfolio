@@ -1,51 +1,69 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { MdRingVolume, MdEmail } from 'react-icons/md';
+import { FiPhone, FiMail } from 'react-icons/fi';
 
 const Container = styled.div`
   position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 20px;
-  border: #e3e3e3;
-  border-radius: 6px;
-  font-size: 16px;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #4fc08d;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 400;
   color: #333333;
-  background-color: #eee;
-  transition: all 150ms ease-in-out;
+  background-color: #fff;
+  transition: opacity 50ms ease-in-out, width 250ms ease-in-out;
   opacity: 0;
-  box-shadow: 0 15px 22px -4px rgba(50, 50, 50, 0.2);
   @media screen and (min-width: 768px) {
-    top: 17px;
-    right: 17px;
-    padding: 30px;
-    font-size: 20px;
+    height: 50px;
   }
   ${props => props.open && css`
     opacity: 1;
+    width: 240px;
+    @media screen and (min-width: 768px) {
+    width: 300px;
+    }
   `}
+`;
+
+const Dl = styled.dl`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25px;
+  width: 100%;
+  height: 100%;
 `;
 
 const ContactGroup = styled.div`
   display: flex;
   align-items: center;
-  & + & {
-    margin-top: 10px;
+  &.email-contact {
+    display: none;
   }
-  & dt {
+  @media screen and (min-width: 768px) {
+      & + & {
+        margin-top: 4px;
+      }
+      &.email-contact {
+        display: flex;
+      }
+  }
+`;
+
+const Dt = styled.dt`
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  & dd {
-    margin-left: 20px;
-  }
+    margin-right: 10px;
 `;
 
 const Link = styled.a`
   transition: all 150ms ease-in-out;
   &:hover {
-    color: rgb(252, 106, 101);
+    color: #4fc08d;
   }
 `;
 
@@ -53,24 +71,24 @@ const Link = styled.a`
 function Contact ({ open }) {
     return (
         <Container open={open}>
-            <dl>
-                <ContactGroup>
-                    <dt aria-label="Tel">
-                        <MdRingVolume />
-                    </dt>
+            <Dl>
+                <ContactGroup className="email-contact">
+                    <Dt aria-label="Tel">
+                        <FiPhone />
+                    </Dt>
                     <dd>
                         <Link href="tel:+82 10-9686-6440">+82 10-9686-6440</Link>
                     </dd>
                 </ContactGroup>
                 <ContactGroup>
-                    <dt aria-label="Email">
-                        <MdEmail />
-                    </dt>
+                    <Dt aria-label="Email">
+                        <FiMail />
+                    </Dt>
                     <dd>
                         <Link href="mailto:imdud0612@gmail.com">imdud0612@gmail.com</Link>
                     </dd>
                 </ContactGroup>
-            </dl>
+            </Dl>
         </Container>
     );
 }

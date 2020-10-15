@@ -25,8 +25,8 @@ const ItemTitle = styled.strong`
   display: block;
   margin-bottom: 20px;
   font-size: 26px;
-  font-weight: 600;
-  color: rgb(252, 106, 101);
+  font-weight: 400;
+  color: #4fc08d;
 `;
 
 const ItemSubTitle = styled.div`

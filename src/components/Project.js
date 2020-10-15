@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa'
 import { useAnimation } from '../hooks/UseAnimation';
+import { useMobile } from "../hooks/UseMobile";
 
 const ProjectBlock = styled.div`
-    position: relative; 
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +19,18 @@ const ProjectBlock = styled.div`
       margin-bottom: 0;
     }
 `;
+
+const ProjectPositioner = styled.div`
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  @media screen and (min-width: 1024px) {
+      top: -120px;
+  }
+`;
+
 
 const StyleBar = styled.div`
     position: absolute; 
@@ -122,8 +135,8 @@ const InfoGroup = styled.div`
 const Title = styled.dt`
   margin-bottom: 10px;
   font-size: 18px;
-  font-weight: 600;
-  color: rgb(252, 106, 101);
+  font-weight: 400;
+  color: #4fc08d;
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
   }
@@ -156,24 +169,12 @@ const Link = styled.a`
 `;
 
 
-function Project ({ project, type, languages, github, image }) {
-    const [mobile, setMobile] = useState(false);
-    const handleResize = (width) => {
-        if(width < 768) setMobile(true);
-        else setMobile(false);
-    }
-
-    useEffect(() => {
-        window.addEventListener('load', e => {
-            handleResize(e.currentTarget.innerWidth);
-        })
-        window.addEventListener('resize', e => {
-            handleResize(e.target.innerWidth);
-        })
-    },[])
+function Project ({ project, type, languages, github, image, id }) {
+    const mobile = useMobile();
 
     return (
         <ProjectBlock>
+            <ProjectPositioner id={id}></ProjectPositioner>
             <StyleBar>
                 <StyleDot />
                 <StyleDot />

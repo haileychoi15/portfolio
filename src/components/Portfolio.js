@@ -1,8 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Project from './Project';
 import Category from './Category';
-import Aside from "./Aside";
+import { useMobile } from "../hooks/UseMobile";
 
 const Container = styled.div`
   width: 100%;
@@ -14,28 +14,23 @@ const Container = styled.div`
 `;
 
 function Portfolio () {
-    const [scroll, setScroll] = useState(false);
-    const handleScroll = e => {
-        console.log(e);
-    } // 스크롤 내려왔을 때 사이드 바 보이기 구현...
-
+    const mobile = useMobile();
     return (
-        <Container id="portpolio" onScroll={handleScroll}>
-            {scroll && <Aside />}
-            <Category name="Portpolio" />
+        <Container>
+            {mobile && <Category name="portfolio" />}
             <div>
                 <Project id="first"
-                    project="Paint Board"
-                    type="Experiments"
-                    languages="JavaScript"
-                    github="https://github.com/haileychoi15/PaintJS"
-                    image="/paint-js.png" />
-                <Project id="second"
                     project="Movie App"
                     type="Movie Recommendation Service"
                     languages="ReactJS"
                     github="https://github.com/haileychoi15/movie-app"
                     image="/movie-app.png" />
+                <Project id="second"
+                         project="Paint Board"
+                         type="Experiments"
+                         languages="JavaScript"
+                         github="https://github.com/haileychoi15/PaintJS"
+                         image="/paint-js.png" />
                 <Project id="third"
                     project="Ticket24"
                     type="Performance Booking Service"
