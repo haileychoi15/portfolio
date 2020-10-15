@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Category from './Category';
 import Item from './Item';
 import { useMobile } from "../hooks/UseMobile";
+import { useLocation } from "../hooks/UseLocation";
 
 const Container = styled.div`
   background-color: #fafafa;
@@ -27,35 +28,34 @@ const AboutBlock = styled.div`
 `;
 
 function About() {
-
     const mobile = useMobile();
     const data = {
         0: {
             subject: 'SKILLSET',
             first: {
                 title: 'Front-end',
-                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+                description: 'HTML, CSS, SASS, Styled-component, JavaScript/ES6, jQuery, ReactJS, Git'
             },
             second: {
                 title: 'Back-end',
-                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+                description: 'Java, Oracle, JSP/Servlet, Git'
             }
         },
         1: {
             subject: 'EDUCATION',
             first: {
                 title: '2015 - 2020',
-                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+                description: 'Bacheor of Arts in Arabic and Economics at Hankuk University of Forieng Studies'
             },
             second: {
                 title: '2020',
-                description: 'HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.HTML, CSS, JavaScript, jQuery, ReactJS is the my best skillset.'
+                description: 'Self-taught'
             }
         }
     }
 
     return (
-        <Container id="about">
+        <Container id="about" {...useLocation('home')}>
             {mobile && <Category name="About" />}
             <AboutBlock>
                 <Item data={data[0]} animationDirection="right" />

@@ -21,7 +21,7 @@ export function useAnimation (direction, duration, delay) {
             default:
                 return;
         }
-    }
+    };
 
     const handleScroll = useCallback(([entry]) => {
         const { current } = dom;

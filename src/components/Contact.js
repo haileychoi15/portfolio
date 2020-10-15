@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { FiPhone, FiMail } from 'react-icons/fi';
+import { AiOutlineMail, AiOutlineLinkedin } from 'react-icons/ai';
 
 const Container = styled.div`
   position: absolute;
@@ -74,15 +74,15 @@ function Contact ({ open }) {
             <Dl>
                 <ContactGroup className="email-contact">
                     <Dt aria-label="Tel">
-                        <FiPhone />
+                        <AiOutlineLinkedin />
                     </Dt>
                     <dd>
-                        <Link href="tel:+82 10-9686-6440">+82 10-9686-6440</Link>
+                        <Link href="tel:+82 10-9686-6440">Linkedin</Link>
                     </dd>
                 </ContactGroup>
                 <ContactGroup>
                     <Dt aria-label="Email">
-                        <FiMail />
+                        <AiOutlineMail />
                     </Dt>
                     <dd>
                         <Link href="mailto:imdud0612@gmail.com">imdud0612@gmail.com</Link>

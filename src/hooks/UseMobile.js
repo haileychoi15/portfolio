@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export function useMobile() {
 
     const [mobile, setMobile] = useState(false);
-    const handleResize = (width) => {
+    const handleResize = useCallback((width) => {
         if(width < 768) setMobile(true);
         else setMobile(false);
-    }
+    },[]);
 
     useEffect(() => {
         window.addEventListener('load', e => {

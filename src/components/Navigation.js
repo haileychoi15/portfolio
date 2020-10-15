@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineHome } from 'react-icons/ai';
 
 const Container = styled.div`
   position: fixed;
@@ -28,6 +28,9 @@ const Link = styled.a`
   align-items: center;
   font-size: 16px;
   font-weight: 400;
+  &.active {
+    color: #4fc08d;
+  }
   & .menu-icon {
     font-size: 20px;
   }
@@ -36,27 +39,27 @@ const Link = styled.a`
   }
 `;
 
-function Aside() {
+function Navigation() {
     return (
         <Container>
             <ul>
                 <Li>
-                    <Link href="#home">
+                    <Link href="#home" className="nav-item home">
                         <AiOutlineHome className="menu-icon" />
                     </Link>
                 </Li>
                 <Li>
-                    <Link href="#first">01</Link>
+                    <Link href="#first" className="nav-item first">01</Link>
                 </Li>
                 <Li>
-                    <Link href="#second">02</Link>
+                    <Link href="#second" className="nav-item second">02</Link>
                 </Li>
                 <Li>
-                    <Link href="#third">03</Link>
+                    <Link href="#third" className="nav-item third">03</Link>
                 </Li>
             </ul>
         </Container>
     );
 }
 
-export default Aside;
+export default Navigation;

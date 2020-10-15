@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { MdAdd, MdArrowForward } from 'react-icons/md';
 import CircleButton from './CircleButton';
 import { useAnimation } from '../hooks/UseAnimation';
+import { useLocation } from '../hooks/UseLocation';
 
 const Container = styled.div`
   position: relative;
@@ -102,8 +103,7 @@ const ButtonText = styled.span`
 function Home () {
     return (
         <Container id="home">
-            {/*<Header />*/}
-            <MeBlock >
+            <MeBlock {...useLocation('home')}>
                 <Photo>
                 </Photo>
                 <Name {...useAnimation('right')}>Hailey Choi</Name>

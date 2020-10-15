@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa'
 import { useAnimation } from '../hooks/UseAnimation';
 import { useMobile } from "../hooks/UseMobile";
+import { useLocation } from "../hooks/UseLocation";
 
 const ProjectBlock = styled.div`
     position: relative;
@@ -158,9 +159,13 @@ const Link = styled.a`
   border-radius: 50%;
   transform: translateX(-50%);
   background-color: #fff;
+  transition: transform 250ms ease-in-out;
   & .github-icon {
     width: 100%;
     height: 100%;
+  }
+  &:hover {
+    transform: translateX(-50%) scale(1.05);
   }
   @media screen and (min-width: 768px) {
     top: 60%;
@@ -171,7 +176,6 @@ const Link = styled.a`
 
 function Project ({ project, type, languages, github, image, id }) {
     const mobile = useMobile();
-
     return (
         <ProjectBlock>
             <ProjectPositioner id={id}></ProjectPositioner>
@@ -180,7 +184,7 @@ function Project ({ project, type, languages, github, image, id }) {
                 <StyleDot />
                 <StyleDot />
             </StyleBar>
-            <ProjectImage>
+            <ProjectImage {...useLocation(id)}>
                 <img src={image} alt={project} />
             </ProjectImage>
             <ProjectInfo>
