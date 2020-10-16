@@ -56,7 +56,7 @@ const Name = styled.div`
 const Job = styled.div`
   font-size: 28px;
   font-weight: 400;
-  color: #4fc08d; //rgb(252, 106, 101);
+  color: #4fc08d;
   @media screen and (min-width: 768px) {
     font-size: 30px;
   }
@@ -106,7 +106,7 @@ function Home () {
             <MeBlock {...useLocation('home')}>
                 <Photo>
                 </Photo>
-                <Name {...useAnimation('right')}>Hailey Choi</Name>
+                <Name {...useAnimation('right', )}>Hailey Choi</Name>
                 <Job {...useAnimation('right', '1', '0.4')}>front-end web developer</Job>
                 <Description {...useAnimation('right', '1', '0.8')}>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
             </MeBlock>

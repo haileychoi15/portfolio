@@ -8,15 +8,14 @@ import { useMobile } from "./hooks/UseMobile";
 
 function App() {
     const mobile = useMobile();
+
     return (
         <Fragment>
             <GlobalStyles />
-            <div>
-                {!mobile && <Navigation />}
-                <Home />
-                <About />
-                <Portfolio />
-            </div>
+            {!mobile && <Navigation />}
+            <Home />
+            <About />
+            <Portfolio />
         </Fragment>
     );
 }

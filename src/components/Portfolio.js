@@ -24,13 +24,13 @@ function Portfolio () {
                     type="Movie Recommendation Service"
                     languages="ReactJS"
                     github="https://github.com/haileychoi15/movie-app"
-                    image="/movie-app.png" />
+                    image="/portfolio/movie-app.png" />
                 <Project id="second"
                          project="Paint Board"
                          type="Experiments"
                          languages="JavaScript"
                          github="https://github.com/haileychoi15/PaintJS"
-                         image="/paint-js.png" />
+                         image="/portfolio/paint-js.png" />
                 <Project id="third"
                     project="Ticket24"
                     type="Performance Booking Service"

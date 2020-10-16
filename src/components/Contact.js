@@ -6,6 +6,7 @@ const Container = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
   width: 100px;
   height: 35px;
   border: 1px solid #4fc08d;
@@ -15,11 +16,12 @@ const Container = styled.div`
   color: #333333;
   background-color: #fff;
   transition: opacity 50ms ease-in-out, width 250ms ease-in-out;
-  opacity: 0;
+  opacity: 1;
   @media screen and (min-width: 768px) {
     height: 50px;
   }
   ${props => props.open && css`
+    display: inline-block;
     opacity: 1;
     width: 240px;
     @media screen and (min-width: 768px) {

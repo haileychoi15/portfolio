@@ -19,7 +19,7 @@ export function useAnimation (direction, duration, delay) {
             case 'right':
                 return 'translate3d(-30%, 0, 0)';
             default:
-                return;
+                return 'translate3d(0, 0, 0)';
         }
     };
 

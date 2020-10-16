@@ -6,10 +6,8 @@ import { useMobile } from "../hooks/UseMobile";
 import { useLocation } from "../hooks/UseLocation";
 
 const Container = styled.div`
+  width: 100%;
   background-color: #fafafa;
-  @media screen and (min-width: 768px) {
-    
-  }
 `;
 
 const AboutBlock = styled.div`
@@ -38,14 +36,14 @@ function About() {
             },
             second: {
                 title: 'Back-end',
-                description: 'Java, Oracle, JSP/Servlet, Git'
+                description: 'Java, JSP/Servlet, Oracle, Git'
             }
         },
         1: {
             subject: 'EDUCATION',
             first: {
                 title: '2015 - 2020',
-                description: 'Bacheor of Arts in Arabic and Economics at Hankuk University of Forieng Studies'
+                description: 'Bachelor of Arts in Arabic and Economics at Hankuk University of Foreign Studies'
             },
             second: {
                 title: '2020',

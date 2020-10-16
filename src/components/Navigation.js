@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { AiOutlineHome } from 'react-icons/ai';
+import { GoHome } from 'react-icons/go';
+import { useAnimation } from "../hooks/UseAnimation";
 
 const Container = styled.div`
   position: fixed;
@@ -43,18 +44,18 @@ function Navigation() {
     return (
         <Container>
             <ul>
-                <Li>
+                <Li {...useAnimation('up', '1','1.6')}>
                     <Link href="#home" className="nav-item home">
-                        <AiOutlineHome className="menu-icon" />
+                        <GoHome className="menu-icon" />
                     </Link>
                 </Li>
-                <Li>
+                <Li {...useAnimation('up', '1','1.8')}>
                     <Link href="#first" className="nav-item first">01</Link>
                 </Li>
-                <Li>
+                <Li {...useAnimation('up', '1','2')}>
                     <Link href="#second" className="nav-item second">02</Link>
                 </Li>
-                <Li>
+                <Li {...useAnimation('up', '1','2.2')}>
                     <Link href="#third" className="nav-item third">03</Link>
                 </Li>
             </ul>
