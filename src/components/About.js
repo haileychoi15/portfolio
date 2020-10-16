@@ -32,18 +32,18 @@ function About() {
             subject: 'SKILLSET',
             first: {
                 title: 'Front-end',
-                description: 'HTML, CSS, SASS, Styled-component, JavaScript/ES6, jQuery, ReactJS, Git'
+                description: 'HTML5, CSS3, SASS (SCSS), Styled-component, JavaScript/ES6, jQuery, ReactJS, Git'
             },
             second: {
                 title: 'Back-end',
-                description: 'Java, JSP/Servlet, Oracle, Git'
+                description: 'Java, JSP/Servlet, Oracle, Firebase, Git'
             }
         },
         1: {
             subject: 'EDUCATION',
             first: {
                 title: '2015 - 2020',
-                description: 'Bachelor of Arts in Arabic and Economics at Hankuk University of Foreign Studies'
+                description: 'Bachelor of Arts in Arabic, Bachelor of Arts in Economics at HUFS (Hankuk University of Foreign Studies), Seoul'
             },
             second: {
                 title: '2020',

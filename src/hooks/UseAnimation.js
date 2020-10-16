@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef} from 'react';
 
-export function useAnimation (direction, duration, delay) {
+export function useAnimation (direction, delay, duration) {
 
     if(direction === undefined) direction = 'up';
     if(duration === undefined) duration = '1';

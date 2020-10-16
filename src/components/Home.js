@@ -4,6 +4,7 @@ import { MdAdd, MdArrowForward } from 'react-icons/md';
 import CircleButton from './CircleButton';
 import { useAnimation } from '../hooks/UseAnimation';
 import { useLocation } from '../hooks/UseLocation';
+import { useMobile } from "../hooks/UseMobile";
 
 const Container = styled.div`
   position: relative;
@@ -56,7 +57,7 @@ const Name = styled.div`
 const Job = styled.div`
   font-size: 28px;
   font-weight: 400;
-  color: #4fc08d;
+  color: #4fc08d;;
   @media screen and (min-width: 768px) {
     font-size: 30px;
   }
@@ -101,14 +102,13 @@ const ButtonText = styled.span`
 `;
 
 function Home () {
+
     return (
         <Container id="home">
             <MeBlock {...useLocation('home')}>
-                <Photo>
-                </Photo>
                 <Name {...useAnimation('right', )}>Hailey Choi</Name>
-                <Job {...useAnimation('right', '1', '0.4')}>front-end web developer</Job>
-                <Description {...useAnimation('right', '1', '0.8')}>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
+                <Job {...useAnimation('right','0.4')}>front-end web developer</Job>
+                <Description {...useAnimation('right','0.8')}>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
             </MeBlock>
             <MenuButton {...useAnimation('left')}>
                 <ButtonText>Contact</ButtonText>

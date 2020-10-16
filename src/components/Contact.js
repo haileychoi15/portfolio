@@ -74,7 +74,7 @@ function Contact ({ open }) {
     return (
         <Container open={open}>
             <Dl>
-                <ContactGroup className="email-contact">
+{/*                <ContactGroup className="email-contact">
                     <Dt aria-label="Tel">
                         <AiOutlineLinkedin />
                     </Dt>
@@ -89,7 +89,7 @@ function Contact ({ open }) {
                     <dd>
                         <Link href="mailto:imdud0612@gmail.com">imdud0612@gmail.com</Link>
                     </dd>
-                </ContactGroup>
+                </ContactGroup>*/}
             </Dl>
         </Container>
     );

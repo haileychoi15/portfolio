@@ -45,7 +45,7 @@ function Navigation() {
         <Container>
             <ul>
                 <Li {...useAnimation('up', '1','1.6')}>
-                    <Link href="#home" className="nav-item home">
+                    <Link href="#home" className="nav-item home active">
                         <GoHome className="menu-icon" />
                     </Link>
                 </Li>

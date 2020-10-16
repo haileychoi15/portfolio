@@ -8,15 +8,17 @@ import { useMobile } from "./hooks/UseMobile";
 
 function App() {
     const mobile = useMobile();
-
     return (
         <Fragment>
             <GlobalStyles />
             {!mobile && <Navigation />}
-            <Home />
-            <About />
-            <Portfolio />
+            <div style={{overflow: 'hidden'}}>
+                <Home />
+                <About />
+                <Portfolio />
+            </div>
         </Fragment>
+
     );
 }
 
