@@ -9,6 +9,7 @@ const Container = styled.div`
   position: relative;
   padding: 20px;
   width: 100%;
+  min-height: 100vh;
   @media screen and (min-width: 768px) {
     height: 800px;
     padding: 50px;
@@ -21,10 +22,10 @@ const MeBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 80%;
-  padding-left: 50px;
   margin: 100px 0;
   @media screen and (min-width: 768px) {
     width: 70%;
+    padding-left: 50px;
     margin: 0;
   }
   @media screen and (min-width: 1024px) {
@@ -36,6 +37,9 @@ const MeBlock = styled.div`
 const Name = styled.div`
   font-size: 36px;
   font-weight: 900;
+  @media screen and (min-width: 480px) {
+    font-size: 42px;
+  }
   @media screen and (min-width: 768px) {
     font-size: 52px;
   }
@@ -43,9 +47,12 @@ const Name = styled.div`
 
 const Job = styled.div`
   margin-bottom: 24px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
-  color: #4fc08d;;
+  color: #4fc08d;
+  @media screen and (min-width: 480px) {
+    font-size: 28px;
+  }
   @media screen and (min-width: 768px) {
     font-size: 30px;
   }
@@ -53,11 +60,14 @@ const Job = styled.div`
 
 const Description = styled.p`
   margin: 0;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.4em;
   & + & {
     margin-top: 15px;
+  }
+  @media screen and (min-width: 480px) {
+    font-size: 22px;
   }
   @media screen and (min-width: 768px) {
     font-size: 24px;
@@ -107,10 +117,10 @@ function Home () {
     return (
         <Container id="home">
             <MeBlock {...useLocation('home')}>
-                <Name {...useAnimation('right', 40)}>{me.name}</Name>
-                <Job {...useAnimation('right',40,'0.4')}>{me.job}</Job>
-                <Description {...useAnimation('right',40 ,'0.8')}>{me.description[0]}</Description>
-                <Description {...useAnimation('right',40 ,'1.2')}>{me.description[1]}</Description>
+                <Name {...useAnimation('right', 35)}>{me.name}</Name>
+                <Job {...useAnimation('right',35,'0.4')}>{me.job}</Job>
+                <Description {...useAnimation('right',35 ,'0.8')}>{me.description[0]}</Description>
+                <Description {...useAnimation('right',35 ,'1.2')}>{me.description[1]}</Description>
             </MeBlock>
             <MenuButton {...useAnimation('left',40, '1.5')}>
                 <ButtonText>Contact</ButtonText>
