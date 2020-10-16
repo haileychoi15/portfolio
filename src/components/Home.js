@@ -4,7 +4,6 @@ import { MdAdd, MdArrowForward } from 'react-icons/md';
 import CircleButton from './CircleButton';
 import { useAnimation } from '../hooks/UseAnimation';
 import { useLocation } from '../hooks/UseLocation';
-import { useMobile } from "../hooks/UseMobile";
 
 const Container = styled.div`
   position: relative;
@@ -106,19 +105,19 @@ function Home () {
     return (
         <Container id="home">
             <MeBlock {...useLocation('home')}>
-                <Name {...useAnimation('right', )}>Hailey Choi</Name>
-                <Job {...useAnimation('right','0.4')}>front-end web developer</Job>
-                <Description {...useAnimation('right','0.8')}>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
+                <Name {...useAnimation('right', 40)}>Hailey Choi</Name>
+                <Job {...useAnimation('right',40,'0.4')}>front-end web developer</Job>
+                <Description {...useAnimation('right',40 ,'0.8')}>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
             </MeBlock>
-            <MenuButton {...useAnimation('left')}>
+            <MenuButton {...useAnimation('left',40, '1.5')}>
                 <ButtonText>Contact</ButtonText>
-                <CircleButton>
-                    <MdAdd className="button-icon" />
+                <CircleButton popup={true} role="contact">
+                    <MdAdd />
                 </CircleButton>
             </MenuButton>
-            <ResumeButton {...useAnimation('left')}>
+            <ResumeButton {...useAnimation('left',40, '1.5')}>
                 <ButtonText>Resume</ButtonText>
-                <CircleButton color="green" backgroundColor="white" border>
+                <CircleButton color="green" backgroundColor="white" border={true} role="contact">
                     <MdArrowForward />
                 </CircleButton>
             </ResumeButton>

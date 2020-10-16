@@ -44,18 +44,18 @@ function Navigation() {
     return (
         <Container>
             <ul>
-                <Li {...useAnimation('up', '1','1.6')}>
+                <Li {...useAnimation('up', 100,'2')}>
                     <Link href="#home" className="nav-item home active">
                         <GoHome className="menu-icon" />
                     </Link>
                 </Li>
-                <Li {...useAnimation('up', '1','1.8')}>
+                <Li {...useAnimation('up', 100,'2.2')}>
                     <Link href="#first" className="nav-item first">01</Link>
                 </Li>
-                <Li {...useAnimation('up', '1','2')}>
+                <Li {...useAnimation('up', 100,'2.4')}>
                     <Link href="#second" className="nav-item second">02</Link>
                 </Li>
-                <Li {...useAnimation('up', '1','2.2')}>
+                <Li {...useAnimation('up', 100,'2.6')}>
                     <Link href="#third" className="nav-item third">03</Link>
                 </Li>
             </ul>

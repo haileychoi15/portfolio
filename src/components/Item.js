@@ -57,7 +57,7 @@ function Item( { data, animationDirection } ) {
     const { subject, first, second } = data;
 
     return (
-        <ItemBlock {...useAnimation(animationDirection)}>
+        <ItemBlock {...useAnimation(animationDirection, 40)}>
             <ItemTitle>{subject}</ItemTitle>
             <ItemSubTitle>{first.title}</ItemSubTitle>
             <ItemDescription>{first.description}</ItemDescription>

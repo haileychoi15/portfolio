@@ -1,13 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { AiOutlineMail, AiOutlineLinkedin } from 'react-icons/ai';
 
 const Container = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  display: none;
-  width: 100px;
+  width: 35px;
   height: 35px;
   border: 1px solid #4fc08d;
   border-radius: 30px;
@@ -15,55 +13,56 @@ const Container = styled.div`
   font-weight: 400;
   color: #333333;
   background-color: #fff;
-  transition: opacity 50ms ease-in-out, width 250ms ease-in-out;
-  opacity: 1;
+  transition: width 250ms ease-in-out;
   @media screen and (min-width: 768px) {
+    width: 50px;
     height: 50px;
+    font-size: 15px;
   }
   ${props => props.open && css`
-    display: inline-block;
-    opacity: 1;
-    width: 240px;
+    width: 280px;
     @media screen and (min-width: 768px) {
-    width: 300px;
+    width: 310px;
     }
   `}
 `;
-
-const Dl = styled.dl`
+const Ul = styled.dl`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   padding-left: 25px;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  ${props => props.open && css`
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  `}
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
-const ContactGroup = styled.div`
+const Li = styled.li`
   display: flex;
+  justify-content: center;
   align-items: center;
-  &.email-contact {
-    display: none;
+  &:first-child::after{
+    content: '/';
+    margin: 0 5px;
   }
-  @media screen and (min-width: 768px) {
-      & + & {
-        margin-top: 4px;
-      }
-      &.email-contact {
-        display: flex;
-      }
-  }
-`;
-
-const Dt = styled.dt`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
 `;
 
 const Link = styled.a`
-  transition: all 150ms ease-in-out;
   &:hover {
     color: #4fc08d;
   }
@@ -73,24 +72,14 @@ const Link = styled.a`
 function Contact ({ open }) {
     return (
         <Container open={open}>
-            <Dl>
-{/*                <ContactGroup className="email-contact">
-                    <Dt aria-label="Tel">
-                        <AiOutlineLinkedin />
-                    </Dt>
-                    <dd>
-                        <Link href="tel:+82 10-9686-6440">Linkedin</Link>
-                    </dd>
-                </ContactGroup>
-                <ContactGroup>
-                    <Dt aria-label="Email">
-                        <AiOutlineMail />
-                    </Dt>
-                    <dd>
-                        <Link href="mailto:imdud0612@gmail.com">imdud0612@gmail.com</Link>
-                    </dd>
-                </ContactGroup>*/}
-            </Dl>
+            <Ul open={open}>
+                <Li>
+                    <Link href="https://www.linkedin.com/in/haileychoi15" title="linkedin">Linkedin</Link>
+                </Li>
+                <Li>
+                    <Link href="mailto:imdud0612@gmail.com" title="email">imdud0612@gmail.com</Link>
+                </Li>
+            </Ul>
         </Container>
     );
 }

@@ -14,7 +14,6 @@ const AboutBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   padding: 0 10% 100px;
   @media screen and (min-width: 768px) {
@@ -32,11 +31,11 @@ function About() {
             subject: 'SKILLSET',
             first: {
                 title: 'Front-end',
-                description: 'HTML5, CSS3, SASS (SCSS), Styled-component, JavaScript/ES6, jQuery, ReactJS, Git'
+                description: 'HTML5, CSS3, SASS (SCSS), Styled-Components, JavaScript/ES6, jQuery, ReactJS, Firebase, Git, Github'
             },
             second: {
                 title: 'Back-end',
-                description: 'Java, JSP/Servlet, Oracle, Firebase, Git'
+                description: 'Java, JSP/Servlet, Oracle, Git, Github'
             }
         },
         1: {

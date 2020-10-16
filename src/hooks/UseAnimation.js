@@ -1,25 +1,27 @@
 import { useCallback, useEffect, useRef} from 'react';
 
-export function useAnimation (direction, delay, duration) {
+export function useAnimation (direction, distance, delay, duration) {
 
     if(direction === undefined) direction = 'up';
     if(duration === undefined) duration = '1';
     if(delay === undefined) delay = '0';
+    if(distance === undefined) distance = 40;
+
 
     const dom = useRef();
 
-    const handleDirection = direction => {
+    const handleDirection = (direction, distance) => {
         switch (direction) {
             case 'up':
-                return 'translate3d(0, 30%, 0)';
+                return `translate3d(0, ${distance}%, 0)`;
             case 'down':
-                return 'translate3d(0, -30%, 0)';
+                return `translate3d(0, -${distance}%, 0)`;
             case 'left':
-                return 'translate3d(30%, 0, 0)';
+                return `translate3d(${distance}%, 0, 0)`;
             case 'right':
-                return 'translate3d(-30%, 0, 0)';
+                return `translate3d(-${distance}%, 0, 0)`;
             default:
-                return 'translate3d(0, 0, 0)';
+                return `translate3d(0, 0, 0)`;
         }
     };
 
@@ -52,7 +54,7 @@ export function useAnimation (direction, delay, duration) {
         ref: dom,
         style: {
             opacity: 0,
-            transform: handleDirection(direction)
+            transform: handleDirection(direction, distance)
         }
     };
 }

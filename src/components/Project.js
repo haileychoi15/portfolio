@@ -188,7 +188,7 @@ function Project ({ project, type, languages, github, image, id }) {
                 <img src={image} alt={project} />
             </ProjectImage>
             <ProjectInfo>
-                <Dl {...useAnimation()}>
+                <Dl {...useAnimation('up', 100)}>
                     <InfoGroup>
                         <Title>Project</Title>
                         <Description>{project}</Description>

@@ -41,15 +41,17 @@ const ButtonBlock = styled.button`
   ${colorStyles}
 `;
 
-function CircleButton({ children, color, backgroundColor, border }) {
+function CircleButton({ children, popup, ...rest}) {
     const [open, setOpen] = useState(false);
-    const handleClick = () => {
-        if(color === 'white') setOpen(!open);
-    }
+    const handleClick = () => popup && setOpen(!open);
     return (
         <>
-            <Contact open={open} />
-            <ButtonBlock color={color} backgroundColor={backgroundColor} border={border} onClick={handleClick} open={open}>
+            {popup && <Contact open={open} />}
+            <ButtonBlock
+                {...rest}
+                onClick={handleClick}
+                open={open}
+            >
                 {children}
             </ButtonBlock>
         </>
@@ -70,7 +72,8 @@ const style = {
 CircleButton.defaultProps = {
     color: 'white',
     backgroundColor: 'black',
-    border: false
+    border: false,
+    popup: false
 };
 
 export default CircleButton;
