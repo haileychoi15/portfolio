@@ -27,7 +27,7 @@ const ButtonBlock = styled.button`
   &:hover {
     transform: scale(1.05);
   }
-  & .button-icon {
+  & .plus-icon {
     transition: all 150ms ease-in-out;
     ${props => props.open && css`
     transform: rotate(45deg);

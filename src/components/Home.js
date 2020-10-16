@@ -24,24 +24,12 @@ const MeBlock = styled.div`
   padding-left: 50px;
   margin: 100px 0;
   @media screen and (min-width: 768px) {
-    width: 50%;
+    width: 70%;
     margin: 0;
   }
-`;
-
-const Photo = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 200px;
-  height: 200px;
-  //background-image: url("/IMG_7629.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  & img {
-    width: 100%;
-    height: 100%;
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+    margin: 0;
   }
 `;
 
@@ -54,6 +42,7 @@ const Name = styled.div`
 `;
 
 const Job = styled.div`
+  margin-bottom: 24px;
   font-size: 28px;
   font-weight: 400;
   color: #4fc08d;;
@@ -63,8 +52,13 @@ const Job = styled.div`
 `;
 
 const Description = styled.p`
+  margin: 0;
   font-size: 22px;
   font-weight: 300;
+  line-height: 1.4em;
+  & + & {
+    margin-top: 15px;
+  }
   @media screen and (min-width: 768px) {
     font-size: 24px;
   }
@@ -101,18 +95,27 @@ const ButtonText = styled.span`
 `;
 
 function Home () {
-
+    const me = {
+        name: 'Hailey Choi',
+        job: 'front-end web developer',
+        description: ['Hello, I am a front-end web developer based in Seoul, South Korea. ' +
+        'I enjoy making things that enhance people\'s lives with my codes. ' +
+        'Especially I focus on well crafted code and minimal UI/UX design to deliver simplicity and clarity.'
+        ,'I spend my time learning new things about development, ' +
+            'reviewing codes, and building web applications to bring my work to life.']
+    };
     return (
         <Container id="home">
             <MeBlock {...useLocation('home')}>
-                <Name {...useAnimation('right', 40)}>Hailey Choi</Name>
-                <Job {...useAnimation('right',40,'0.4')}>front-end web developer</Job>
-                <Description {...useAnimation('right',40 ,'0.8')}>Hello, I am a front-end web developer from Seoul, South Korea. I enjoy building crafted code based web applications. Also have a passion for Ul/UX design. </Description>
+                <Name {...useAnimation('right', 40)}>{me.name}</Name>
+                <Job {...useAnimation('right',40,'0.4')}>{me.job}</Job>
+                <Description {...useAnimation('right',40 ,'0.8')}>{me.description[0]}</Description>
+                <Description {...useAnimation('right',40 ,'1.2')}>{me.description[1]}</Description>
             </MeBlock>
             <MenuButton {...useAnimation('left',40, '1.5')}>
                 <ButtonText>Contact</ButtonText>
                 <CircleButton popup={true} role="contact">
-                    <MdAdd />
+                    <MdAdd className="plus-icon" />
                 </CircleButton>
             </MenuButton>
             <ResumeButton {...useAnimation('left',40, '1.5')}>
