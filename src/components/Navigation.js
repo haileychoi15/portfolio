@@ -29,6 +29,7 @@ const Link = styled.a`
   align-items: center;
   font-size: 16px;
   font-weight: 400;
+  transition: color 150ms ease-in-out;
   &.active {
     color: #4fc08d;
   }
@@ -72,25 +73,27 @@ function Navigation() {
         detectScroll(items);
     }
 
+    const direction = 'up'
+    const distance = 300;
     return (
         <Container>
             <ul>
-                <Li {...useAnimation('up', 200,'2')}>
+                <Li {...useAnimation(direction, distance,'2')}>
                     <Link href="#home" className="nav-item home active" onClick={handleClick}>
                         <GoHome className="menu-icon" />
                     </Link>
                 </Li>
-                <Li {...useAnimation('up', 200,'2.2')}>
+                <Li {...useAnimation(direction, distance,'2.2')}>
                     <Link href="#first" className="nav-item first" onClick={handleClick}>
                         01
                     </Link>
                 </Li>
-                <Li {...useAnimation('up', 200,'2.4')}>
+                <Li {...useAnimation(direction, distance,'2.4')}>
                     <Link href="#second" className="nav-item second" onClick={handleClick}>
                         02
                     </Link>
                 </Li>
-                <Li {...useAnimation('up', 200,'2.6')}>
+                <Li {...useAnimation(direction, distance,'2.6')}>
                     <Link href="#third" className="nav-item third" onClick={handleClick}>
                         03
                     </Link>

@@ -77,10 +77,7 @@ const ProjectImage = styled.div`
     border-top: none;
     background-color: #ffffff;
     transform: translateX(-50%);
-    & img {
-    width: 95%;
-    height: 95%;
-    }
+    overflow: hidden;
     @media screen and (min-width: 768px) {
       width: 80%;
       height: 80%;
@@ -88,6 +85,15 @@ const ProjectImage = styled.div`
     @media screen and (min-width: 1024px) {
       width: 60%;
       height: 60%;
+    }
+`;
+
+const Image = styled.img`
+    width: 95%;
+    height: 95%;
+    transition: transform 250ms ease-in-out;
+    &:hover {
+        transform: scale(1.05);
     }
 `;
 
@@ -165,7 +171,7 @@ const Link = styled.a`
     height: 100%;
   }
   &:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: translateX(-50%) scale(1.06);
   }
   @media screen and (min-width: 768px) {
     top: 60%;
@@ -185,7 +191,7 @@ function Project ({ project, type, languages, github, image, id }) {
                 <StyleDot />
             </StyleBar>
             <ProjectImage {...useLocation(id)}>
-                <img src={image} alt={project} />
+                <Image src={image} alt={project} />
             </ProjectImage>
             <ProjectInfo>
                 <Dl {...useAnimation('up', 100)}>

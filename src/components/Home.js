@@ -11,7 +11,6 @@ const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   @media screen and (min-width: 768px) {
-    height: 800px;
     padding: 50px;
   }
 `;
@@ -104,6 +103,11 @@ const ButtonText = styled.span`
   margin-right: 20px;
 `;
 
+const Link = styled.a`
+  width: 100%;
+  height: 100%;
+`;
+
 function Home () {
     const me = {
         name: 'Hailey Choi',
@@ -122,17 +126,19 @@ function Home () {
                 <Description {...useAnimation('right',35 ,'0.8')}>{me.description[0]}</Description>
                 <Description {...useAnimation('right',35 ,'1.2')}>{me.description[1]}</Description>
             </MeBlock>
-            <MenuButton {...useAnimation('left',40, '1.5')}>
+            <MenuButton {...useAnimation('left',40, '1.6')}>
                 <ButtonText>Contact</ButtonText>
                 <CircleButton popup={true} role="contact">
                     <MdAdd className="plus-icon" />
                 </CircleButton>
             </MenuButton>
-            <ResumeButton {...useAnimation('left',40, '1.5')}>
-                <ButtonText>Resume</ButtonText>
-                <CircleButton color="green" backgroundColor="white" border={true} role="contact">
-                    <MdArrowForward />
-                </CircleButton>
+            <ResumeButton {...useAnimation('left',40, '1.6')}>
+                <ButtonText>Github</ButtonText>
+                <Link href="https://github.com/haileychoi15" target="_blank">
+                    <CircleButton color="green" backgroundColor="white" border={true} role="contact">
+                        <MdArrowForward />
+                    </CircleButton>
+                </Link>
             </ResumeButton>
         </Container>
     );
