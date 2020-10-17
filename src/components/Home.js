@@ -1,9 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { MdAdd, MdArrowForward } from 'react-icons/md';
 import CircleButton from './CircleButton';
 import { useAnimation } from '../hooks/UseAnimation';
 import { useLocation } from '../hooks/UseLocation';
+
+const mainColor = css`
+  ${({mainColor}) => css`
+    color: ${mainColor};
+  `}
+`;
 
 const Container = styled.div`
   position: relative;
@@ -48,13 +54,13 @@ const Job = styled.div`
   margin-bottom: 24px;
   font-size: 24px;
   font-weight: 400;
-  color: #4fc08d;
   @media screen and (min-width: 480px) {
     font-size: 28px;
   }
   @media screen and (min-width: 768px) {
     font-size: 30px;
   }
+  ${mainColor}
 `;
 
 const Description = styled.p`
@@ -108,7 +114,7 @@ const Link = styled.a`
   height: 100%;
 `;
 
-function Home () {
+function Home ({mainColor}) {
     const me = {
         name: 'Hailey Choi',
         job: 'front-end web developer',
@@ -122,20 +128,20 @@ function Home () {
         <Container id="home">
             <MeBlock {...useLocation('home')}>
                 <Name {...useAnimation('right', 35)}>{me.name}</Name>
-                <Job {...useAnimation('right',35,'0.4')}>{me.job}</Job>
+                <Job {...useAnimation('right',35,'0.4')} mainColor={mainColor}>{me.job}</Job>
                 <Description {...useAnimation('right',35 ,'0.8')}>{me.description[0]}</Description>
                 <Description {...useAnimation('right',35 ,'1.2')}>{me.description[1]}</Description>
             </MeBlock>
             <MenuButton {...useAnimation('left',40, '1.6')}>
                 <ButtonText>Contact</ButtonText>
-                <CircleButton popup={true} role="contact">
+                <CircleButton popup={true} mainColor={mainColor}>
                     <MdAdd className="plus-icon" />
                 </CircleButton>
             </MenuButton>
             <ResumeButton {...useAnimation('left',40, '1.6')}>
                 <ButtonText>Github</ButtonText>
                 <Link href="https://github.com/haileychoi15" target="_blank">
-                    <CircleButton color="green" backgroundColor="white" border={true} role="contact">
+                    <CircleButton color="green" backgroundColor="white" border={true} mainColor={mainColor}>
                         <MdArrowForward />
                     </CircleButton>
                 </Link>

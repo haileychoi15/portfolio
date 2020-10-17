@@ -24,7 +24,7 @@ const AboutBlock = styled.div`
   }
 `;
 
-function About() {
+function About({mainColor}) {
     const mobile = useMobile();
     const data = {
         0: {
@@ -55,8 +55,8 @@ function About() {
         <Container id="about" {...useLocation('home')}>
             {mobile && <Category name="About" />}
             <AboutBlock>
-                <Item data={data[0]} animationDirection="right" />
-                <Item data={data[1]} animationDirection="left" />
+                <Item data={data[0]} animationDirection="right"  mainColor={mainColor} />
+                <Item data={data[1]} animationDirection="left" mainColor={mainColor} />
             </AboutBlock>
         </Container>
     );

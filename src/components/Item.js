@@ -1,6 +1,12 @@
 import React from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { useAnimation } from '../hooks/UseAnimation';
+
+const mainColor = css`
+  ${({mainColor}) => css`
+    color: ${mainColor};
+  `}
+`;
 
 const ItemBlock = styled.div`
   border-radius: 6px;
@@ -26,7 +32,7 @@ const ItemTitle = styled.strong`
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: 400;
-  color: #4fc08d;
+  ${mainColor}
   @media screen and (min-width: 768px) {
     font-size: 26px;
   }
@@ -52,13 +58,13 @@ const ItemDescription = styled.p`
   }
 `;
 
-function Item( { data, animationDirection } ) {
+function Item( { data, animationDirection, mainColor } ) {
 
     const { subject, first, second } = data;
 
     return (
         <ItemBlock {...useAnimation(animationDirection, 40)}>
-            <ItemTitle>{subject}</ItemTitle>
+            <ItemTitle mainColor={mainColor}>{subject}</ItemTitle>
             <ItemSubTitle>{first.title}</ItemSubTitle>
             <ItemDescription>{first.description}</ItemDescription>
             <ItemSubTitle>{second.title}</ItemSubTitle>

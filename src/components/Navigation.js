@@ -1,7 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled,{ css } from 'styled-components';
 import { GoHome } from 'react-icons/go';
 import { useAnimation } from "../hooks/UseAnimation";
+
+const mainColor = css`
+  ${({mainColor}) => css`
+    color: ${mainColor};
+  `}
+`;
 
 const Container = styled.div`
   position: fixed;
@@ -30,18 +36,16 @@ const Link = styled.a`
   font-size: 16px;
   font-weight: 400;
   transition: color 150ms ease-in-out;
-  &.active {
-    color: #4fc08d;
+  &.active,
+  &:hover {
+    ${mainColor}
   }
   & .menu-icon {
     font-size: 20px;
   }
-  &:hover {
-    color: #4fc08d;
-  }
 `;
 
-function Navigation() {
+function Navigation({mainColor}) {
 
     const detectScroll = (items) => {
         let scrollStop = function (callback) {
@@ -79,22 +83,22 @@ function Navigation() {
         <Container>
             <ul>
                 <Li {...useAnimation(direction, distance,'2')}>
-                    <Link href="#home" className="nav-item home active" onClick={handleClick}>
+                    <Link href="#home" className="nav-item home active" onClick={handleClick} mainColor={mainColor}>
                         <GoHome className="menu-icon" />
                     </Link>
                 </Li>
                 <Li {...useAnimation(direction, distance,'2.2')}>
-                    <Link href="#first" className="nav-item first" onClick={handleClick}>
+                    <Link href="#first" className="nav-item first" onClick={handleClick} mainColor={mainColor}>
                         01
                     </Link>
                 </Li>
                 <Li {...useAnimation(direction, distance,'2.4')}>
-                    <Link href="#second" className="nav-item second" onClick={handleClick}>
+                    <Link href="#second" className="nav-item second" onClick={handleClick} mainColor={mainColor}>
                         02
                     </Link>
                 </Li>
                 <Li {...useAnimation(direction, distance,'2.6')}>
-                    <Link href="#third" className="nav-item third" onClick={handleClick}>
+                    <Link href="#third" className="nav-item third" onClick={handleClick} mainColor={mainColor}>
                         03
                     </Link>
                 </Li>

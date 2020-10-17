@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FaGithub } from 'react-icons/fa'
 import { useAnimation } from '../hooks/UseAnimation';
 import { useMobile } from "../hooks/UseMobile";
@@ -143,7 +143,9 @@ const Title = styled.dt`
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 400;
-  color: #4fc08d;
+  ${props => props.mainColor && css`
+      color: ${props.mainColor};
+  `}
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
   }
@@ -180,7 +182,7 @@ const Link = styled.a`
 `;
 
 
-function Project ({ project, type, languages, github, image, id }) {
+function Project ({ project, type, languages, github, image, id, mainColor }) {
     const mobile = useMobile();
     return (
         <ProjectBlock>
@@ -196,24 +198,24 @@ function Project ({ project, type, languages, github, image, id }) {
             <ProjectInfo>
                 <Dl {...useAnimation('up', 100)}>
                     <InfoGroup>
-                        <Title>Project</Title>
+                        <Title mainColor={mainColor}>Project</Title>
                         <Description>{project}</Description>
                     </InfoGroup>
                     {!mobile &&
                     <>
                     <InfoGroup>
-                        <Title>Type</Title>
+                        <Title mainColor={mainColor}>Type</Title>
                         <Description>{type}</Description>
                     </InfoGroup>
                     <InfoGroup>
-                        <Title>Languages</Title>
+                        <Title mainColor={mainColor}>Languages</Title>
                         <Description>{languages}</Description>
                     </InfoGroup>
                     </>
                     }
                     <InfoGroup className="github-group">
                         {!mobile &&
-                        <Title>Github</Title>
+                        <Title mainColor={mainColor}>Github</Title>
                         }
                         <Description>
                             <Link href={github} target="_blank">

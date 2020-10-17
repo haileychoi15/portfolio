@@ -13,7 +13,7 @@ const Container = styled.div`
   }
 `;
 
-function Portfolio () {
+function Portfolio ({mainColor}) {
     const mobile = useMobile();
     return (
         <Container>
@@ -24,19 +24,22 @@ function Portfolio () {
                     type="Movie Recommendation Service"
                     languages="ReactJS"
                     github="https://github.com/haileychoi15/movie-app"
-                    image="/portfolio/movie-app.png" />
+                    image="/portfolio/movie-app.png"
+                    mainColor={mainColor}/>
                 <Project id="second"
                          project="Paint Board"
                          type="Experiments"
                          languages="JavaScript"
                          github="https://github.com/haileychoi15/PaintJS"
-                         image="/portfolio/paint-js.png" />
+                         image="/portfolio/paint-js.png"
+                         mainColor={mainColor}/>
                 <Project id="third"
                     project="Ticket24"
                     type="Performance Booking Service"
                     languages="JavaScript"
                     github="https://github.com/haileychoi15/ticket24"
-                    image="https://user-images.githubusercontent.com/60546778/91707600-01cf5c80-ebbb-11ea-89cc-7e381bb864df.png" />
+                    image="https://user-images.githubusercontent.com/60546778/91707600-01cf5c80-ebbb-11ea-89cc-7e381bb864df.png"
+                    mainColor={mainColor}/>
             </div>
         </Container>
     );

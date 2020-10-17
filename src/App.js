@@ -8,14 +8,16 @@ import { useMobile } from "./hooks/UseMobile";
 
 function App() {
     const mobile = useMobile();
+    const mainColor = '#4fc08d';
+    //const mainColor = '#ff922b';
     return (
         <Fragment>
             <GlobalStyles />
-            {!mobile && <Navigation />}
+            {!mobile && <Navigation mainColor={mainColor} />}
             <div style={{overflow: 'hidden'}}>
-                <Home />
-                <About />
-                <Portfolio />
+                <Home mainColor={mainColor} />
+                <About mainColor={mainColor} />
+                <Portfolio mainColor={mainColor} />
             </div>
         </Fragment>
 

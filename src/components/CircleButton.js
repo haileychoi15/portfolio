@@ -2,16 +2,6 @@ import React, {useState} from 'react';
 import styled, { css } from 'styled-components';
 import Contact from "./Contact";
 
-const colorStyles = css`
-  ${({color, backgroundColor}) => css`
-    color: ${style.color[color]};
-    background-color: ${style.backgroundColor[backgroundColor]};
-    ${props => props.border && css`
-        border: 1px solid ${style.color[color]};
-    `}
-  `}
-`;
-
 const ButtonBlock = styled.button`
   position: relative;
   display: flex;
@@ -23,6 +13,7 @@ const ButtonBlock = styled.button`
   padding: 0;
   font-size: 20px;
   color: #fff;
+  background-color: #333;
   transition: all 250ms ease-in-out;
   &:hover {
     transform: scale(1.05);
@@ -38,35 +29,30 @@ const ButtonBlock = styled.button`
     height: 50px;
     font-size: 24px;
   }
-  ${colorStyles}
+  ${props => !props.popup && css`
+     color: ${props.mainColor};
+     background-color: #fff;
+     border: 1px solid ${props.mainColor};
+  `}
 `;
 
-function CircleButton({ children, popup, ...rest}) {
+function CircleButton({ children, popup, mainColor, ...rest}) {
     const [open, setOpen] = useState(false);
     const handleClick = () => popup && setOpen(!open);
     return (
         <>
-            {popup && <Contact open={open} />}
+            {popup && <Contact open={open} mainColor={mainColor} />}
             <ButtonBlock
                 {...rest}
                 onClick={handleClick}
                 open={open}
+                popup={popup}
+                mainColor={mainColor}
             >
                 {children}
             </ButtonBlock>
         </>
     );
-}
-
-const style = {
-    color: {
-        white: '#fff',
-        green: '#4fc08d'
-    },
-    backgroundColor: {
-        black: '#333',
-        white: '#fff'
-    }
 }
 
 CircleButton.defaultProps = {
