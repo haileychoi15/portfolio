@@ -74,10 +74,10 @@ function Contact ({ open }) {
         <Container open={open}>
             <Ul open={open}>
                 <Li>
-                    <Link href="https://www.linkedin.com/in/haileychoi15" title="linkedin">Linkedin</Link>
+                    <Link href="https://www.linkedin.com/in/haileychoi15" target="_blank" title="Move to Hailey's linkedin profile">Linkedin</Link>
                 </Li>
                 <Li>
-                    <Link href="mailto:imdud0612@gmail.com" title="email">imdud0612@gmail.com</Link>
+                    <Link href="mailto:imdud0612@gmail.com" title="Send email to this address">imdud0612@gmail.com</Link>
                 </Li>
             </Ul>
         </Container>

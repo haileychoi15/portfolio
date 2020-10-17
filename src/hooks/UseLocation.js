@@ -7,13 +7,12 @@ export function useLocation(id) {
     const dom = useRef();
 
     const handleScroll = useCallback(([entry]) => {
-        const { current } = dom;
         if (entry.isIntersecting) {
-            const navs = document.querySelectorAll('.nav-item');
-            navs.forEach(item => {
-                item.classList.remove('active');
-                if(item.classList.contains(current.id)) {
-                    item.classList.add('active');
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => {
+                if (!item.classList.contains('scrolling')) {
+                    item.classList.remove('active');
+                    if(item.classList.contains(id)) item.classList.add('active');
                 }
             });
         }
@@ -33,7 +32,6 @@ export function useLocation(id) {
     }, [handleScroll]);
 
     return {
-        ref: dom,
-        id: id
+        ref: dom
     };
 }
