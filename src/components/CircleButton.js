@@ -11,7 +11,7 @@ const ButtonBlock = styled.button`
   width: 35px;
   height: 35px;
   padding: 0;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #fff;
   background-color: #333;
   transition: all 250ms ease-in-out;
@@ -27,7 +27,7 @@ const ButtonBlock = styled.button`
   @media screen and (min-width: 768px) {
     width: 50px;
     height: 50px;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   ${props => !props.popup && css`
      color: ${props.mainColor};

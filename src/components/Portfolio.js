@@ -9,7 +9,7 @@ const Container = styled.div`
   color: #333;
   background-color: #fff;
   @media screen and (min-width: 768px) {
-     min-height: 800px;
+     min-height: 100vh;
   }
 `;
 

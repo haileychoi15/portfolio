@@ -13,11 +13,11 @@ const mainColor = css`
 
 const Container = styled.div`
   position: relative;
-  padding: 20px;
-  width: 100%;
+  padding: 1.25em;
+  width: 100vw;
   min-height: 100vh;
   @media screen and (min-width: 768px) {
-    padding: 50px;
+    padding: 3.125em;
   }
 `;
 
@@ -27,10 +27,10 @@ const MeBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 80%;
-  margin: 100px 0;
+  margin: 6.25rem 0;
   @media screen and (min-width: 768px) {
     width: 70%;
-    padding-left: 50px;
+    padding-left: 1em;
     margin: 0;
   }
   @media screen and (min-width: 1024px) {
@@ -40,73 +40,73 @@ const MeBlock = styled.div`
 `;
 
 const Name = styled.div`
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 900;
   @media screen and (min-width: 480px) {
-    font-size: 42px;
+    font-size: 2.625rem;
   }
   @media screen and (min-width: 768px) {
-    font-size: 52px;
+    font-size: 3.25rem;
   }
 `;
 
 const Job = styled.div`
-  margin-bottom: 24px;
-  font-size: 24px;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
   font-weight: 400;
   @media screen and (min-width: 480px) {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   @media screen and (min-width: 768px) {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   ${mainColor}
 `;
 
 const Description = styled.p`
   margin: 0;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.4em;
   & + & {
-    margin-top: 15px;
+    margin-top: 0.6em;
   }
   @media screen and (min-width: 480px) {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
   @media screen and (min-width: 768px) {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 `;
 
 const MenuButton = styled.div`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.25em;
+  right: 1.25em;
   display: flex;
   align-items: center;
   @media screen and (min-width: 768px) {
-    top: 50px;
-    right: 50px;
+    top: 3.125em;
+    right: 3.125em;
   }
 `;
 
 const ResumeButton = styled.div`
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.25em;
+  right: 1.25em;
   display: flex;
   align-items: center;
   @media screen and (min-width: 768px) {
-    bottom: 50px;
-    right: 50px;
+    bottom: 3.125em;
+    right: 3.125em;
   }
 `;
 
 const ButtonText = styled.span`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
-  margin-right: 20px;
+  margin-right: 1em;
 `;
 
 const Link = styled.a`

@@ -7,7 +7,7 @@ const CategoryBlock = styled.div`
   align-items: center;
   padding: 50px 40px;
   margin-bottom: 30px;
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: 500;
   color: #333;
   @media screen and (min-width: 768px) {

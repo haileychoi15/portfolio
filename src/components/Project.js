@@ -12,9 +12,9 @@ const ProjectBlock = styled.div`
     align-items: center;
     width: 100%; 
     padding-top: 55.4%; /* 8:5 Aspect Ratio => 62.5% */
-    margin-bottom: 150px; // 프로젝트 간 세로 간격
+    margin-bottom: 9.375rem; // 프로젝트 간 세로 간격
     @media screen and (min-width: 768px) {
-      margin-bottom: 120px;
+      margin-bottom: 7.5rem;
     }
     @media screen and (min-width: 1024px) {
       margin-bottom: 0;
@@ -23,12 +23,12 @@ const ProjectBlock = styled.div`
 
 const ProjectPositioner = styled.div`
   position: absolute;
-  top: -100px;
+  top: -6.25rem;
   left: 0;
   width: 100%;
-  height: 120px;
+  height: 7.5rem;
   @media screen and (min-width: 1024px) {
-      top: -120px;
+      top: -7.5rem;
   }
 `;
 
@@ -39,7 +39,7 @@ const StyleBar = styled.div`
     left: 50%;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 1.6rem;
     width: 90%;
     height: 25px;
     border: 1px solid #e9e9e9;
@@ -116,17 +116,17 @@ const ProjectInfo = styled.div`
 
 const Dl = styled.dl`
    position: absolute;
-   top: 20px;
+   top: 1.25rem;
    left: 0;
    width: 100%;
    display: flex;
    justify-content: space-between;
    margin: 0;
    @media screen and (min-width: 768px) {
-      top: 30px;
+      top: 1.875rem;
    }
    @media screen and (min-width: 1024px) {
-      top: 40px;
+      top: 2.5rem;
    }
 `;
 
@@ -135,25 +135,25 @@ const InfoGroup = styled.div`
     position: relative;
   }
   & + & {
-    margin-left: 40px;
+    margin-left: 2.5rem;
   }
 `;
 
 const Title = styled.dt`
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: 1.6rem;
+  font-size: 1.125rem;
   font-weight: 400;
   ${props => props.mainColor && css`
       color: ${props.mainColor};
   `}
   @media screen and (min-width: 768px) {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 `;
 
 const Description = styled.dd`
   margin-left: 0;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   color: #333;
 `;
@@ -162,8 +162,8 @@ const Link = styled.a`
   position: absolute;
   top: 25%;
   right: 0;
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   border-radius: 50%;
   transform: translateX(-50%);
   background-color: #fff;

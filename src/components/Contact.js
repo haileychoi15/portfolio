@@ -21,7 +21,7 @@ const Container = styled.div`
   height: 35px;
   ${borderStyles}
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   color: #333333;
   background-color: #fff;
@@ -29,7 +29,7 @@ const Container = styled.div`
   @media screen and (min-width: 768px) {
     width: 50px;
     height: 50px;
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   ${props => props.open && css`
     width: 280px;
@@ -41,7 +41,7 @@ const Container = styled.div`
 const Ul = styled.dl`
   display: flex;
   align-items: center;
-  padding-left: 25px;
+  padding-left: 1.5625rem;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -70,7 +70,7 @@ const Li = styled.li`
   align-items: center;
   &:first-child::after{
     content: '/';
-    margin: 0 5px;
+    margin: 0 0.3em;
   }
 `;
 

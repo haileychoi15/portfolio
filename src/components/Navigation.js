@@ -12,7 +12,7 @@ const mainColor = css`
 const Container = styled.div`
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: 1.25em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +25,7 @@ const Container = styled.div`
 
 const Li = styled.li`
   & + & {
-    margin-top: 30px;
+    margin-top: 1.875em;
   }
 `;
 
@@ -33,7 +33,7 @@ const Link = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   transition: color 150ms ease-in-out;
   &.active,
@@ -41,7 +41,7 @@ const Link = styled.a`
     ${mainColor}
   }
   & .menu-icon {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 `;
 

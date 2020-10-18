@@ -6,7 +6,7 @@ import { useMobile } from "../hooks/UseMobile";
 import { useLocation } from "../hooks/UseLocation";
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   background-color: #fafafa;
 `;
 
@@ -55,7 +55,7 @@ function About({mainColor}) {
         <Container id="about" {...useLocation('home')}>
             {mobile && <Category name="About" />}
             <AboutBlock>
-                <Item data={data[0]} animationDirection="right"  mainColor={mainColor} />
+                <Item data={data[0]} animationDirection="right" mainColor={mainColor} />
                 <Item data={data[1]} animationDirection="left" mainColor={mainColor} />
             </AboutBlock>
         </Container>

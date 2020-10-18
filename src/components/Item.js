@@ -11,10 +11,10 @@ const mainColor = css`
 const ItemBlock = styled.div`
   border-radius: 6px;
   width: 100%;
-  padding: 20px 10px 20px 50px;  
+  padding: 1rem 0 1.25rem 3.125rem;
   color: #333;
   & + & {
-    margin-top: 30px;
+    margin-top: 1.875rem;
     margin-left: 0;
   }
   @media screen and (min-width: 768px) {
@@ -22,39 +22,39 @@ const ItemBlock = styled.div`
     width: 30%;
     & + & {
     margin-top: 0;
-    margin-left: 100px;
+    margin-left: 6.25rem;
     }
   }
 `;
 
 const ItemTitle = styled.strong`
   display: block;
-  margin-bottom: 20px;
-  font-size: 22px;
+  margin-bottom: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 400;
   ${mainColor}
   @media screen and (min-width: 768px) {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 `;
 
 const ItemSubTitle = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   color: #cacaca;
   @media screen and (min-width: 768px) {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 `;
 
 const ItemDescription = styled.p`
-  margin: 10px 0 20px;
-  font-size: 18px;
+  margin: 0.625rem 0 1.25rem;
+  font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.4em;
   color: #333;
   @media screen and (min-width: 768px) {
-    margin: 18px 0;
+    margin: 1.125rem 0;
   }
 `;
 
