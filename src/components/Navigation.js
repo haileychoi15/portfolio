@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import styled,{ css } from 'styled-components';
 import { GoHome } from 'react-icons/go';
 import { useAnimation } from "../hooks/UseAnimation";
+import {NavContext} from "../Context";
 
 const mainColor = css`
   ${({mainColor}) => css`
@@ -47,6 +48,8 @@ const Link = styled.a`
 
 function Navigation({mainColor}) {
 
+    const [items, setItems] = useContext(NavContext);
+    console.log(items, setItems);
     const detectScroll = (items) => {
         let scrollStop = function (callback) {
             if (!callback || typeof callback !== 'function') return;
@@ -64,10 +67,20 @@ function Navigation({mainColor}) {
 
         scrollStop(function () {
             items.forEach(item => item.classList.remove('scrolling'));
+
+            /*setItems(items.map(item => (
+                {...item, scrolling: false}
+            )));*/
         });
     }
 
-    const handleClick = (e) => {
+    const handleClick = (e, index) => {
+        /*setItems(items.map((item, i) => (
+            index === i
+            ? {...item, active: true, scrolling: true}
+            : {...item, active: false, scrolling: true}
+            )));*/
+
         const items = document.querySelectorAll('.nav-item');
         items.forEach(item => {
             item.classList.add('scrolling');
@@ -79,9 +92,20 @@ function Navigation({mainColor}) {
 
     const direction = 'up'
     const distance = 300;
+
     return (
         <Container>
             <ul>
+                {/*{items.map((item, index) => (
+                    <Li key={index}>
+                        <Link href={`#${item.href}`} className={item.active ? 'active' : ''} onClick={() => handleClick(index)} mainColor={mainColor}>
+                            {item.href === 'home'
+                                ? <GoHome className="menu-icon" />
+                                : item.text
+                            }
+                        </Link>
+                    </Li>
+                ))}*/}
                 <Li {...useAnimation(direction, distance,'2')}>
                     <Link href="#home" className="nav-item home active" onClick={handleClick} mainColor={mainColor}>
                         <GoHome className="menu-icon" />
@@ -100,6 +124,11 @@ function Navigation({mainColor}) {
                 <Li {...useAnimation(direction, distance,'2.6')}>
                     <Link href="#third" className="nav-item third" onClick={handleClick} mainColor={mainColor}>
                         03
+                    </Link>
+                </Li>
+                <Li {...useAnimation(direction, distance,'2.8')}>
+                    <Link href="#third" className="nav-item fourth" onClick={handleClick} mainColor={mainColor}>
+                        04
                     </Link>
                 </Li>
             </ul>

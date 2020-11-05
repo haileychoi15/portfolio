@@ -1,13 +1,23 @@
-import {useCallback, useEffect, useRef } from 'react';
+import {useCallback, useContext, useEffect, useRef, useState} from 'react';
+import {NavContext} from "../Context";
 
 export function useLocation(id) {
 
     if(id === undefined) id = 'home';
 
     const dom = useRef();
+    //const [items, setItems] = useContext(NavContext);
 
     const handleScroll = useCallback(([entry]) => {
         if (entry.isIntersecting) {
+            /*setItems(items
+                .filter(item => !item.scrolling)
+                .map(item => (
+                item.href === id
+                    ? {...item, active: true}
+                    : {...item, active: false}
+            )));
+            items.map(item => console.log(item.scrolling));*/
             const items = document.querySelectorAll('.nav-item');
             items.forEach(item => {
                 if (!item.classList.contains('scrolling')) {

@@ -14,33 +14,56 @@ const Container = styled.div`
 `;
 
 function Portfolio ({mainColor}) {
+    const data = [{
+        id: 'first',
+        project: 'Hello Arabic',
+        type: 'Arabic Dictionary and Wordbook',
+        language: 'ReactJS & Firebase',
+        github: 'https://github.com/haileychoi15/hello-arabic',
+        image: '/portfolio/hello-arabic.png'
+    },
+    {
+        id: 'second',
+        project: 'Movie App',
+        type: 'Movie Recommendation Service',
+        language: 'ReactJS',
+        github: 'https://github.com/haileychoi15/movie-app',
+        image: '/portfolio/movie-app.png'
+    },
+    {
+        id: 'third',
+        project: 'Paint Board',
+        type: 'Experiments',
+        language: 'JavaScript',
+        github: 'https://github.com/haileychoi15/PaintJS',
+        image: '/portfolio/paint-js.png'
+    },
+    {
+        id: 'fourth',
+        project: 'Ticket24',
+        type: 'Performance Booking Service',
+        language: 'JavaScript',
+        github: 'https://github.com/haileychoi15/ticket24',
+        image: 'https://user-images.githubusercontent.com/60546778/91707600-01cf5c80-ebbb-11ea-89cc-7e381bb864df.png'
+    }]
     const mobile = useMobile();
     return (
         <Container>
             {mobile && <Category name="portfolio" />}
-            <div>
-                <Project id="first"
-                    project="Movie App"
-                    type="Movie Recommendation Service"
-                    languages="ReactJS"
-                    github="https://github.com/haileychoi15/movie-app"
-                    image="/portfolio/movie-app.png"
-                    mainColor={mainColor}/>
-                <Project id="second"
-                         project="Paint Board"
-                         type="Experiments"
-                         languages="JavaScript"
-                         github="https://github.com/haileychoi15/PaintJS"
-                         image="/portfolio/paint-js.png"
-                         mainColor={mainColor}/>
-                <Project id="third"
-                    project="Ticket24"
-                    type="Performance Booking Service"
-                    languages="JavaScript"
-                    github="https://github.com/haileychoi15/ticket24"
-                    image="https://user-images.githubusercontent.com/60546778/91707600-01cf5c80-ebbb-11ea-89cc-7e381bb864df.png"
-                    mainColor={mainColor}/>
-            </div>
+            <ul>
+                {data.map(item => (
+                    <li key={item.id}>
+                        <Project id={item.id}
+                                 project={item.project}
+                                 type={item.type}
+                                 languages={item.language}
+                                 github={item.github}
+                                 image={item.image}
+                                 mainColor={mainColor}
+                        />
+                    </li>
+                ))}
+            </ul>
         </Container>
     );
 }
